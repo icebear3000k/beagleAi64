@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running Advance demos &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="Docker Environment" href="docker_environment.html"/>
+        <link rel="prev" title="Demo Configuration file" href="configuration_file.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running Advance demos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#single-input-multi-inference-demo">Single input multi inference demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-input-multi-inference-demo">Multi input multi inference demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Running Advance demos</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-advance-demos">
+<span id="pub-edgeai-running-advance-demos"></span><h1>Running Advance demos<a class="headerlink" href="#running-advance-demos" title="Permalink to this headline">¶</a></h1>
+<p>The same Python and C++ demo applications can be used to run multiple inference
+models and also work with multiple inputs with just simple changes in the config
+file.</p>
+<p>From a repo of input sources, output sources and models one can define advance
+dataflows which connect them in various configurations. Details on configuration
+file parameters can be found in <a class="reference internal" href="configuration_file.html#pub-edgeai-configuration"><span class="std std-ref">Demo Configuration file</span></a></p>
+<div class="section" id="single-input-multi-inference-demo">
+<h2>Single input multi inference demo<a class="headerlink" href="#single-input-multi-inference-demo" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of a single-input, multi-inference demo which takes a camera
+input and run multiple networks on each of them.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps/apps_python# ./app_edgeai.py ../configs/single_input_multi_infer.yaml
+</pre></div>
+</div>
+<p>Sample output for single input, multi inference demo is as shown below,</p>
+<div class="figure align-center" id="id1">
+<img alt="_images/edgeai-single-input-multi-infer.jpg" src="_images/edgeai-single-input-multi-infer.jpg" />
+<p class="caption"><span class="caption-number">Fig. 12 </span><span class="caption-text">Sample output showing single input, mutli-inference output</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can specify the output window location and sizes as shown in the
+configuration file,</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">flows</span><span class="p">:</span>
+    <span class="nt">flow0</span><span class="p">:</span>
+        <span class="nt">input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input0</span>
+        <span class="nt">models</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">model0</span><span class="p p-Indicator">,</span> <span class="nv">model1</span><span class="p p-Indicator">,</span> <span class="nv">model2</span><span class="p p-Indicator">,</span> <span class="nv">model3</span><span class="p p-Indicator">]</span>
+        <span class="nt">outputs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">output0</span><span class="p p-Indicator">,</span> <span class="nv">output0</span><span class="p p-Indicator">,</span> <span class="nv">output0</span><span class="p p-Indicator">,</span> <span class="nv">output0</span><span class="p p-Indicator">]</span>
+        <span class="nt">mosaic</span><span class="p">:</span>
+            <span class="nt">mosaic0</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">160</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">90</span>
+            <span class="nt">mosaic1</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">960</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">90</span>
+            <span class="nt">mosaic2</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">160</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">540</span>
+            <span class="nt">mosaic3</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">960</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">540</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-input-multi-inference-demo">
+<h2>Multi input multi inference demo<a class="headerlink" href="#multi-input-multi-inference-demo" title="Permalink to this headline">¶</a></h2>
+<p>Here is an example of a multi-input, multi-inference demo which takes a camera
+input and video input and runs multiple networks on each of them.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps/apps_python# ./app_edgeai.py ../configs/multi_input_multi_infer.yaml
+</pre></div>
+</div>
+<p>Sample output for multi input, multi inference demo is as shown below,</p>
+<div class="figure align-center" id="id2">
+<img alt="_images/edgeai-multi-input-multi-infer.jpg" src="_images/edgeai-multi-input-multi-infer.jpg" />
+<p class="caption"><span class="caption-number">Fig. 13 </span><span class="caption-text">Sample output showing multi-input, mutli-inference output</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>We can specify the output window location and sizes as shown in the
+configuration file,</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">flows</span><span class="p">:</span>
+    <span class="nt">flow0</span><span class="p">:</span>
+        <span class="nt">input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input0</span>
+        <span class="nt">models</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">model1</span><span class="p p-Indicator">,</span> <span class="nv">model2</span><span class="p p-Indicator">]</span>
+        <span class="nt">outputs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">output0</span><span class="p p-Indicator">,</span> <span class="nv">output0</span><span class="p p-Indicator">]</span>
+        <span class="nt">mosaic</span><span class="p">:</span>
+            <span class="nt">mosaic0</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">160</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">90</span>
+            <span class="nt">mosaic1</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">960</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">90</span>
+    <span class="nt">flow1</span><span class="p">:</span>
+        <span class="nt">input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input1</span>
+        <span class="nt">models</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">model0</span><span class="p p-Indicator">,</span> <span class="nv">model3</span><span class="p p-Indicator">]</span>
+        <span class="nt">outputs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">output0</span><span class="p p-Indicator">,</span> <span class="nv">output0</span><span class="p p-Indicator">]</span>
+        <span class="nt">mosaic</span><span class="p">:</span>
+            <span class="nt">mosaic0</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">160</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">540</span>
+            <span class="nt">mosaic1</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">960</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">540</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="docker_environment.html" class="btn btn-neutral float-right" title="Docker Environment" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="configuration_file.html" class="btn btn-neutral" title="Demo Configuration file" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>RPi 40-pin header programming &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="up" title="Connectivity and Peripherals" href="connectivity.html"/>
+        <link rel="next" title="SDK Components" href="sdk_components.html"/>
+        <link rel="prev" title="WiFi Out Of Box Demo - User Guide" href="wifi_oob_demo.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="wifi_oob_demo.html">WiFi Out Of Box Demo - User Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">RPi 40-pin header programming</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pin-header-default-configuration">40-pin header default configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#constraints-on-the-hw-pwm-functionality">Constraints on the HW PWM functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#repositories">Repositories</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#additional-references">Additional References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="connectivity.html">Connectivity and Peripherals</a> &raquo;</li>
+      
+    <li>RPi 40-pin header programming</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="rpi-40-pin-header-programming">
+<span id="pub-edgeai-pi-hdr-programming"></span><h1>RPi 40-pin header programming<a class="headerlink" href="#rpi-40-pin-header-programming" title="Permalink to this headline">¶</a></h1>
+<p>TI J72e SK development board contain a 40 pin GPIO
+header, similar to the 40 pin header in the Raspberry Pi. These GPIOs can be
+controlled for digital input and output using the Python/CPP libraries provided in the
+TI GPIO Library packages. The libraries have the same API as the RPi.GPIO
+library for Raspberry Pi in order to provide an easy way to move applications
+running on the Raspberry Pi to the TI board.</p>
+<p>By default, the 40-pin header is not enabled on TDA4VM SK board. This can be enabled by
+specifying the dtb overlay file <code class="docutils literal notranslate"><span class="pre">k3-j721e-sk-rpi-exp-header.dtbo</span></code> in
+<code class="docutils literal notranslate"><span class="pre">/run/media/mmcblk0p1/uenv.txt</span></code> as given below.</p>
+<p><code class="docutils literal notranslate"><span class="pre">name_overlays=k3-j721e-edgeai-apps.dtbo</span> <span class="pre">k3-j721e-sk-rpi-exp-header.dtbo</span></code></p>
+<p>Reboot the board after editing and saving the file.</p>
+<div class="section" id="pin-header-default-configuration">
+<span id="pub-edgeai-default-pin-setup"></span><h2>40-pin header default configuration<a class="headerlink" href="#pin-header-default-configuration" title="Permalink to this headline">¶</a></h2>
+<p>The default pin configuration on the SK board is as follows. Any deviation from this
+needs modifications to the Linux DTBO. The table below lists pin numbers in all three
+supported modes, namely BOARD, BCM, and SOC.</p>
+<p>BOARD: <strong>Physical Pin Number</strong>
+BCM  : <strong>Broadcom SOC Numbering</strong>
+SOC  : <strong>TI SOC Naming</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>BOARD</p></th>
+<th class="head"><p>BCM</p></th>
+<th class="head"><p>SOC</p></th>
+<th class="head"><p>Function</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>2</p></td>
+<td><p>GPIO0_84</p></td>
+<td><p>I2C SDA</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>3</p></td>
+<td><p>GPIO0_83</p></td>
+<td><p>I2CSCL</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>4</p></td>
+<td><p>GPIO0_7</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>14</p></td>
+<td><p>GPIO0_70</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p>15</p></td>
+<td><p>GPIO0_81</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p>17</p></td>
+<td><p>GPIO0_71</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p>18</p></td>
+<td><p>GPIO0_1</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p>27</p></td>
+<td><p>GPIO0_82</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>15</p></td>
+<td><p>22</p></td>
+<td><p>GPIO0_11</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>16</p></td>
+<td><p>23</p></td>
+<td><p>GPIO0_5</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p>24</p></td>
+<td><p>GPIO0_12</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p>10</p></td>
+<td><p>GPIO0_101</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>21</p></td>
+<td><p>9</p></td>
+<td><p>GPIO0_107</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>22</p></td>
+<td><p>25</p></td>
+<td><p>GPIO0_8</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>23</p></td>
+<td><p>11</p></td>
+<td><p>GPIO0_103</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>24</p></td>
+<td><p>8</p></td>
+<td><p>GPIO0_102</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>26</p></td>
+<td><p>7</p></td>
+<td><p>GPIO0_108</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>29</p></td>
+<td><p>5</p></td>
+<td><p>GPIO0_93</p></td>
+<td><p>HW PWM</p></td>
+</tr>
+<tr class="row-even"><td><p>31</p></td>
+<td><p>6</p></td>
+<td><p>GPIO0_94</p></td>
+<td><p>HW PWM</p></td>
+</tr>
+<tr class="row-odd"><td><p>32</p></td>
+<td><p>12</p></td>
+<td><p>GPIO0_98</p></td>
+<td><p>HW PWM</p></td>
+</tr>
+<tr class="row-even"><td><p>33</p></td>
+<td><p>13</p></td>
+<td><p>GPIO0_99</p></td>
+<td><p>HW PWM</p></td>
+</tr>
+<tr class="row-odd"><td><p>35</p></td>
+<td><p>19</p></td>
+<td><p>GPIO0_2</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>36</p></td>
+<td><p>16</p></td>
+<td><p>GPIO0_97</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>37</p></td>
+<td><p>26</p></td>
+<td><p>GPIO0_115</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-even"><td><p>38</p></td>
+<td><p>20</p></td>
+<td><p>GPIO0_3</p></td>
+<td><p>GPIO</p></td>
+</tr>
+<tr class="row-odd"><td><p>40</p></td>
+<td><p>21</p></td>
+<td><p>GPIO0_4</p></td>
+<td><p>GPIO</p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>NOTE</strong>: Please refer to <a class="reference external" href="https://www.ti.com/lit/pdf/spruj21">SK-TDA4VM User’s Guide</a>
+for details on the expansion header pin names and functionality. Also refer to section
+2.1.2 Power Budget Considerations for power/voltage limits on the expansion header pins.</p>
+</div>
+<div class="section" id="constraints-on-the-hw-pwm-functionality">
+<h2>Constraints on the HW PWM functionality<a class="headerlink" href="#constraints-on-the-hw-pwm-functionality" title="Permalink to this headline">¶</a></h2>
+<p>The physical pins 29, 31, 32, and 33 support HW PWM functionality.</p>
+<ol class="arabic">
+<li><p>All four pins are individually controllable with a few constraints noted below:</p>
+<ol class="arabic simple">
+<li><p>Pin pair {29, 31} is internally linked to a common HW block. If both pins
+are enabled, then they must be programmed to the same frequency.</p></li>
+<li><p>Pin pair {32, 33} is internally linked to a common HW block. If both pins
+are enabled, then they must be programmed to the same frequency.</p></li>
+</ol>
+</li>
+<li><p>The duty cycle on each of the HW pins can be controlled independently,
+whether they belong to the same pin-pair or not.</p></li>
+<li><p>If both pins of a given pin-pair are enabled and if a frequency change needs
+to be made on the pin-pair, then follow the sequence below:</p>
+<ol class="arabic simple">
+<li><p>Disable PWM operation on one of of the pins</p></li>
+<li><p>Update the frequency on the active pin with <strong>new_frequency</strong></p></li>
+<li><p>Setup the disabled pin with <strong>new_frequency</strong> and enable it</p></li>
+</ol>
+<p><strong>This is the only case where the operations across pins need to be co-ordinated
+when using the Python or CPP GPIO API.</strong></p>
+</li>
+</ol>
+</div>
+<div class="section" id="repositories">
+<h2>Repositories<a class="headerlink" href="#repositories" title="Permalink to this headline">¶</a></h2>
+<p>The Python and CPP projects are hosted on Texas Instruments githib. The links to the projects
+are given below. The details on installation and testing can be found in the respective project
+documentation.</p>
+<p><strong>Python Library</strong>: <a class="reference external" href="https://github.com/TexasInstruments/ti-gpio-py.git">https://github.com/TexasInstruments/ti-gpio-py.git</a></p>
+<p><strong>CPP Library</strong>: <a class="reference external" href="https://github.com/TexasInstruments/ti-gpio-cpp.git">https://github.com/TexasInstruments/ti-gpio-cpp.git</a></p>
+<p>The above repositories are cloned and installed during the initialization process upon initial boot.
+The <code class="docutils literal notranslate"><span class="pre">gpiozero</span></code> library is also installed as a part fo the initialization.</p>
+</div>
+<div class="section" id="additional-references">
+<h2>Additional References<a class="headerlink" href="#additional-references" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to the lik below for information on the 40-pin header numbering and naming conventions:</p>
+<div class="line-block">
+<div class="line"><a class="reference external" href="https://pinout.xyz">https://pinout.xyz</a>/#</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sdk_components.html" class="btn btn-neutral float-right" title="SDK Components" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="wifi_oob_demo.html" class="btn btn-neutral" title="WiFi Out Of Box Demo - User Guide" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

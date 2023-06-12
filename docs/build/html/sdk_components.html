@@ -1,0 +1,345 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SDK Components &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="SDK Roadmap" href="roadmap.html"/>
+        <link rel="prev" title="RPi 40-pin header programming" href="pi_hdr_programming.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SDK Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#edge-ai-applications">Edge AI Applications</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#edgeai-tidl-tools">edgeai-tidl-tools</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edgeai-modelzoo">edgeai-modelzoo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edge-ai-apps">edge_ai_apps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edgeai-gst-plugins">edgeai-gst-plugins</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#edgeai-tiovx-modules">edgeai-tiovx-modules</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#processor-sdk-rtos">Processor SDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#processor-sdk-linux">Processor SDK Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>SDK Components</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sdk-components">
+<span id="pub-edgeai-sdk-components"></span><h1>SDK Components<a class="headerlink" href="#sdk-components" title="Permalink to this headline">¶</a></h1>
+<p>The Processor SDK Linux for Edge AI can be divided into 3 parts, Applications,
+Processor SDK Linux and Processor SDK RTOS. Users can get the latest application
+updates and bug fixes from the public repositories (GitHub and git.ti.com)
+which aligns with the SDK releases done quarterly. One can also build every component
+from source by following the steps here, <a class="reference internal" href="development_flow.html#pub-edgeai-sdk-development-flow"><span class="std std-ref">SDK Development flow</span></a></p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/edgeai-sdk-components.png"><img alt="_images/edgeai-sdk-components.png" src="_images/edgeai-sdk-components.png" style="width: 662.5px; height: 346.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 24 </span><span class="caption-text">Processor SDK Linux for Edge AI components</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="edge-ai-applications">
+<span id="pub-edgeai-applications"></span><h2>Edge AI Applications<a class="headerlink" href="#edge-ai-applications" title="Permalink to this headline">¶</a></h2>
+<p>The edge AI applications are designed for users to quickly evaluate various Deep Learning
+networks on TDA4 SoC. The user can run standalone examples and Jupyter notebook applications
+to evaluate inference models either from <a class="reference external" href="https://github.com/TexasInstruments/edgeai-modelzoo">TI Edge AI Model Zoo</a>
+or a custom network.
+Once a network is finalized for performance and accuracy it can also be
+easily integrated in a typical capture-inference-display usecase using example
+GStreamer based applications for rapid prototyping and deployment.</p>
+<div class="section" id="edgeai-tidl-tools">
+<span id="pub-edgeai-tidl-tools"></span><h3>edgeai-tidl-tools<a class="headerlink" href="#edgeai-tidl-tools" title="Permalink to this headline">¶</a></h3>
+<p>This application repository provides standalone Python and C/C++ examples to
+quickly evaluate inference models using TFLite, ONNX and NeoAI-DLR runtime
+using file based inputs. It also houses the Jupyter notebooks similar to
+<a class="reference external" href="https://dev.ti.com/edgeai/">TI Edge AI Cloud</a> which can be executed right on
+the TDA4VM Starter Kit.</p>
+<p>For more details on using this application repo please refer to the documentation
+and source code found here: <a class="reference external" href="https://github.com/TexasInstruments/edgeai-tidl-tools">https://github.com/TexasInstruments/edgeai-tidl-tools</a></p>
+</div>
+<div class="section" id="edgeai-modelzoo">
+<span id="pub-edgeai-modelzoo"></span><h3>edgeai-modelzoo<a class="headerlink" href="#edgeai-modelzoo" title="Permalink to this headline">¶</a></h3>
+<p>This repo provides collection of example Deep Neural Network (DNN) Models
+for various computer vision tasks. A few example models are packaged as part of
+the SDK to run out-of-box demos. More can be downloaded using a download script
+made available in the edge_ai_apps repo.</p>
+<p>For more details on the the pre-imported models and related documentation please visit:
+<a class="reference external" href="https://github.com/TexasInstruments/edgeai-modelzoo">https://github.com/TexasInstruments/edgeai-modelzoo</a></p>
+</div>
+<div class="section" id="edge-ai-apps">
+<span id="pub-edgeai-apps"></span><h3>edge_ai_apps<a class="headerlink" href="#edge-ai-apps" title="Permalink to this headline">¶</a></h3>
+<p>These are plug-and-play Deep Learning applications which support running open
+source runtime frameworks such as TFLite, ONNX and NeoAI-DLR with a live camera
+and display. They help connect realtime camera, video or RTSP sources to DL
+inference to live display, bitstream or RTSP sinks.</p>
+<p>The latest source code with fixes can be pulled from: <a class="reference external" href="https://git.ti.com/cgit/edgeai/edge_ai_apps">https://git.ti.com/cgit/edgeai/edge_ai_apps</a></p>
+</div>
+<div class="section" id="edgeai-gst-plugins">
+<span id="pub-edgeai-gst-plugins"></span><h3>edgeai-gst-plugins<a class="headerlink" href="#edgeai-gst-plugins" title="Permalink to this headline">¶</a></h3>
+<p>This repo provides the source of custom GStreamer plugins which helps offload
+tasks to TDA4 hardware accelerators and advanced DSPs with the help of
+edgeai-tiovx-modules. The repo gets downloaded, built and installed as part
+of the <a class="reference internal" href="getting_started.html#pub-edgeai-install-dependencies"><span class="std std-ref">Installing Dependencies</span></a> step.</p>
+<p>Source code and documentation: <a class="reference external" href="https://github.com/TexasInstruments/edgeai-gst-plugins">https://github.com/TexasInstruments/edgeai-gst-plugins</a></p>
+</div>
+<div class="section" id="edgeai-tiovx-modules">
+<span id="pub-edgeai-tiovx-modules"></span><h3>edgeai-tiovx-modules<a class="headerlink" href="#edgeai-tiovx-modules" title="Permalink to this headline">¶</a></h3>
+<p>This repo provides OpenVx modules which help access underlying hardware
+accelerators in the  TDA4 SoC and serves as a bridge between GStreamer
+custom elements and underlying OpenVx custom kernels. The repo gets downloaded,
+built and installed as part of the <a class="reference internal" href="getting_started.html#pub-edgeai-install-dependencies"><span class="std std-ref">Installing Dependencies</span></a> step.</p>
+<p>Source code and documentation: <a class="reference external" href="https://github.com/TexasInstruments/edgeai-tiovx-modules">https://github.com/TexasInstruments/edgeai-tiovx-modules</a></p>
+</div>
+</div>
+<div class="section" id="processor-sdk-rtos">
+<span id="pub-edgeai-psdk-rtos"></span><h2>Processor SDK RTOS<a class="headerlink" href="#processor-sdk-rtos" title="Permalink to this headline">¶</a></h2>
+<p>The Processor SDK Linux for Edge AI gets all the HWA drivers, optimized libraries, OpenVx framework
+and more from Processor SDK RTOS</p>
+<p>For more information visit <a class="reference external" href="https://software-dl.ti.com/processor-sdk-rtos/esd/docs/latest/rtos/index_overview.html">Processor SDK RTOS Getting Started Guide</a>.</p>
+</div>
+<div class="section" id="processor-sdk-linux">
+<span id="pub-edgeai-psdk-linux"></span><h2>Processor SDK Linux<a class="headerlink" href="#processor-sdk-linux" title="Permalink to this headline">¶</a></h2>
+<p>The Processor SDK Linux for Edge AI  gets all the Linux kernel, filesystem, device-drivers and more
+from Processor SDK Linux</p>
+<p>For more information visit <a class="reference external" href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-jacinto7/08_02_00_03/exports/docs/devices/J7/linux/index.html">Processor SDK Linux Software Developer’s Guide</a>.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="roadmap.html" class="btn btn-neutral float-right" title="SDK Roadmap" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="pi_hdr_programming.html" class="btn btn-neutral" title="RPi 40-pin header programming" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

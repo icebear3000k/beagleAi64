@@ -1,0 +1,330 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running Simple demos &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="DL models for Edge Inference" href="inference_models.html"/>
+        <link rel="prev" title="Getting Started" href="getting_started.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running Simple demos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-python-based-demo-applications">Running Python based demo applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-and-running-c-based-demo-applications">Building and running C++ based demo applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Running Simple demos</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-simple-demos">
+<span id="pub-edgeai-running-simple-demos"></span><h1>Running Simple demos<a class="headerlink" href="#running-simple-demos" title="Permalink to this headline">¶</a></h1>
+<p>This chapter describes how to run Python and C++ demo applications in
+<a class="reference external" href="https://git.ti.com/cgit/edgeai/edge_ai_apps">edge_ai_apps</a> with live
+camera and display.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please note that the Python demos are useful for quick prototyping
+while C++ demos are similar by design but tuned for performance.</p>
+</div>
+<div class="section" id="running-python-based-demo-applications">
+<span id="pub-edgeai-python-demos"></span><h2>Running Python based demo applications<a class="headerlink" href="#running-python-based-demo-applications" title="Permalink to this headline">¶</a></h2>
+<p>Python based demos are simple executable scripts written for image
+classification, object detection and semantic segmentation. Demos are
+configured using a YAML file. Details on configuration file parameters can
+be found in <a class="reference internal" href="configuration_file.html#pub-edgeai-configuration"><span class="std std-ref">Demo Configuration file</span></a></p>
+<p>Sample configuration files for out of the box demos can be found in
+<code class="docutils literal notranslate"><span class="pre">edge_ai_apps/configs</span></code> this folder also contains a template config file
+which has brief info on each configurable parameter <code class="docutils literal notranslate"><span class="pre">edge_ai_apps/configs/app_config_template.yaml</span></code></p>
+<p>Here is how a Python based image classification demo can be run,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps/apps_python# ./app_edgeai.py ../configs/image_classification.yaml
+</pre></div>
+</div>
+<p>The demo captures the input frames from connected USB camera and passes
+through pre-processing, inference and post-processing before sent to display.
+Sample output for image classification and object detection demos are as below,</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><img alt="logo1" class="align-middle" src="_images/edgeai-image-classify.jpg" /></p></td>
+<td><p><img alt="logo2" class="align-middle" src="_images/edgeai-object-detect.jpg" /></p></td>
+</tr>
+</tbody>
+</table>
+<p>To exit the demo press Ctrl+C.</p>
+</div>
+<div class="section" id="building-and-running-c-based-demo-applications">
+<span id="pub-edgeai-cpp-demos"></span><h2>Building and running C++ based demo applications<a class="headerlink" href="#building-and-running-c-based-demo-applications" title="Permalink to this headline">¶</a></h2>
+<p>C++ apps needs to be built directly on target and requires header files of
+different deep-learning runtime framework and its dependencies which are
+installed in the setup script. The setup script builds the C++ apps when
+executed. However one can also follow below steps to clean build C++ apps</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps/apps_cpp# rm -rf build bin lib
+root@j7-evm:/opt/edge_ai_apps/apps_cpp# mkdir build
+root@j7-evm:/opt/edge_ai_apps/apps_cpp# <span class="nb">cd</span> build
+root@j7-evm:/opt/edge_ai_apps/apps_cpp/build# cmake ..
+root@j7-evm:/opt/edge_ai_apps/apps_cpp/build# make -j2
+</pre></div>
+</div>
+<p>Run the demo once the application is successfully built</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps/apps_cpp# ./bin/Release/app_edgeai ../configs/image_classification.yaml
+</pre></div>
+</div>
+<p>To exit the demo press Ctrl+C.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Both Python and C++ applications are similar by construction and can accept
+the same config file and command line arguments</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The C++ apps built on Yocto Linux may not run in Docker as there could be
+a mismatch in Glib and other related tools. So its <strong>highly recommended</strong> to
+rebuild the C++ apps within the Docker environment.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="inference_models.html" class="btn btn-neutral float-right" title="DL models for Edge Inference" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="getting_started.html" class="btn btn-neutral" title="Getting Started" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

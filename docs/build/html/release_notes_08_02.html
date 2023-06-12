@@ -1,0 +1,450 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Release notes version 08.02.00 &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="up" title="Release Notes" href="release_notes.html"/>
+        <link rel="next" title="Release notes version 08.01.00" href="release_notes_08_01.html"/>
+        <link rel="prev" title="Release Notes" href="release_notes.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="release_notes.html">Release Notes</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Release notes version 08.02.00</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-in-this-release">New in this Release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fixed-in-this-release">Fixed in this Release</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#known-issues">Known Issues</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model-zoo">Model Zoo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#software-components">Software components</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_08_01.html">Release notes version 08.01.00</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_08_00.html">Release notes version 08.00.01</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_00_05.html">Release notes version 00.05.00</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_00_04.html">Release notes version 00.04.02</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="release_notes.html">Release Notes</a> &raquo;</li>
+      
+    <li>Release notes version 08.02.00</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="release-notes-version-08-02-00">
+<h1>Release notes version 08.02.00<a class="headerlink" href="#release-notes-version-08-02-00" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="new-in-this-release">
+<span id="pub-edgeai-new-in-this-release"></span><h2>New in this Release<a class="headerlink" href="#new-in-this-release" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>Support for Sony’s IMX390 FPD link based sensors and Fusion1 board</p></li>
+<li><p>Support for 8 channel capture of Sony’s IMX390 FPD link based sensors at 2MP &#64; 30fps using virtual channels</p></li>
+<li><p>Support for Sony’s IMX219 Rpi camera with 10-bit capture support</p></li>
+<li><p>Multi-instance Human pose estimation demo in edge_ai_apps <a class="reference internal" href="data_flows.html#pub-edgeai-human-pose-estimation-data-flow"><span class="std std-ref">Human Pose Estimation</span></a></p></li>
+<li><p>Updated edgeai-gst-plugins with multi-channel support</p></li>
+<li><p>Updated <cite>tiovxisp &lt;https://github.com/TexasInstruments/edgeai-gst-plugins/wiki/tiovxisp&gt;</cite> Gstreamer element with IMX390 support</p></li>
+<li><p>Improved <cite>tiovxdlpreproc &lt;https://github.com/TexasInstruments/edgeai-gst-plugins/wiki/tiovxdlpreproc&gt;</cite> Gstreamer element with DMA optimizations to provide 2x performance lift</p></li>
+<li><p>New tiovxdlcolorconvert Gstreamer element with DMA optimizations to provide 4x performance lift</p></li>
+<li><p>Updated performance visualization tool with realtime junction temperature readings of CPU, GPU, C7x DSP and R5F cores</p></li>
+<li><p>Validation of <cite>Intel-9260 WiFi card &lt;https://www.amazon.in/Intel-Wireless-Ac-9260-2230-Gigabit/dp/B079QJQF4Y&gt;</cite> in Access Point and Station mode</p></li>
+<li><p>Enablement of Pulse Width Modulation (PWM) hardware accelerator</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="fixed-in-this-release">
+<span id="pub-fixed-in-this-release"></span><h2>Fixed in this Release<a class="headerlink" href="#fixed-in-this-release" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>ADASVISION-5149 - Hostname incorrect in SK shows j7-evm instead of tda4vm-sk</p></li>
+<li><p>ADASVISION-5117 - USB 3.0 device is recognized as USB 2.1 sometimes</p></li>
+<li><p>ADASVISION-4953 - Video looping does not work with v4l2 HW decoder plugin</p></li>
+<li><p>ADASVISION-4943 - IMX219 based Rpi camera cannot capture data correctly for 10 bit format</p></li>
+<li><p>ADASVISION-4809 - Python and C++ apps cannot measure pre and post processing time accurately</p></li>
+</ul>
+<blockquote>
+<div></div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="known-issues">
+<span id="pub-edgeai-known-issues"></span><h2>Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li><p>ADASVISION-5463 - ONR-OD-8000 model fails with IMX390  in CPP app due to 1200x1200 resolution</p></li>
+<li><p>ADASVISION-5113 - GST Pipeline error: Error pulling tensor from GST Pipeline</p></li>
+<li><p>ADASVISION-5070 - Edge AI demo output not resizing properly on 4K monitor</p></li>
+<li><p>ADASVISION-4997 - Multi-input multi-inference demo freezes after long duration run</p></li>
+<li><p>ADASVISION-4794 - Application takes 10-15 seconds to come up in some cases</p></li>
+<li><p>ADASVISION-5454 - tiovxdlcolorcovert does not support UYVY</p></li>
+<li><p>ADASVISION-5447 - Models failing due to tiovxdlcolorconvert limitation</p></li>
+<li><p>ADASVISION-5421 - No metadata file was found for CPP apps with TVM models</p></li>
+<li><p>ADASVISION-5420 - No valid frames found before end of stream</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="model-zoo">
+<span id="pub-edgeai-model-zoo-status"></span><h2>Model Zoo<a class="headerlink" href="#model-zoo" title="Permalink to this headline">¶</a></h2>
+<p>About 83 models from 8.2 model zoo are regressed with multiple input sources such as
+camera and video files. A list of unsupported models are as below,</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Height/2 is odd, tiovxdlpreproc block fetch logic fails</dt><dd><ul>
+<li><p>TFL-CL-0100-efficientNet-edgeTPU-m</p></li>
+<li><p>TFL-CL-0140-efficientNet-lite4</p></li>
+<li><p>TFL-CL-0170-efficientNet-lite1</p></li>
+<li><p>TFL-CL-0190-efficientNet-edgeTPU-l</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>High latency causes DSS underflow</dt><dd><ul>
+<li><p>ONR-SS-8730-deeplabv3-mobv3-lite-large-cocoseg21-512x512</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Odd resolution, tiovxdlcolorconvert fails</dt><dd><ul>
+<li><p>TVM-CL-3430-gluoncv-mxnet-xception</p></li>
+<li><p>TFL-CL-0040-InceptionNetV3</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Human pose model with unsupported post processing</dt><dd><ul>
+<li><p>ONR-KD-7000-human-pose-ae-mobv2-fpn-spp-udp-512x512</p></li>
+<li><p>ONR-KD-7010-human-pose-ae-res50v2-fpn-spp-udp-512x512</p></li>
+<li><p>ONR-KD-7020-human-pose-ae-mobv2-pan-spp-udp-512x512</p></li>
+<li><p>ONR-KD-7030-human-pose-ae-res50v2-pan-spp-udp-512x512</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please also refer to <a class="reference external" href="https://github.com/TexasInstruments/edgeai-gst-plugins/issues">edgeai-gst-plugins issues</a>
+for more details on bugs filed on custom GStreamer plugins</p>
+</div>
+</div>
+<div class="section" id="software-components">
+<span id="pub-edgeai-software-components"></span><h2>Software components<a class="headerlink" href="#software-components" title="Permalink to this headline">¶</a></h2>
+<p>List of software components used in this version</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 59%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Componenet</p></th>
+<th class="head"><p>Version</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PSDKLA (filesystem, uboot)</p></td>
+<td><p>08.02.00.04</p></td>
+</tr>
+<tr class="row-odd"><td><p>PSDKRA (firmware)</p></td>
+<td><p>08.02.00.06</p></td>
+</tr>
+<tr class="row-even"><td><p>Docker</p></td>
+<td><p>19.03.8-ce</p></td>
+</tr>
+<tr class="row-odd"><td><p>Ubuntu (Docker)</p></td>
+<td><p>20.04.LTS</p></td>
+</tr>
+<tr class="row-even"><td><p>Python</p></td>
+<td><p>3.8</p></td>
+</tr>
+<tr class="row-odd"><td><p>OpenCV</p></td>
+<td><p>4.5.1</p></td>
+</tr>
+<tr class="row-even"><td><p>GStreamer</p></td>
+<td><p>1.16.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>Cmake</p></td>
+<td><p>3.16.3</p></td>
+</tr>
+<tr class="row-even"><td><p>Ninja</p></td>
+<td><p>1.10.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>Meson</p></td>
+<td><p>0.57.2</p></td>
+</tr>
+<tr class="row-even"><td><p>Jupyterlab</p></td>
+<td><p>3.0.14</p></td>
+</tr>
+<tr class="row-odd"><td><p>NeoAI - DLR</p></td>
+<td><p>1.8.0</p></td>
+</tr>
+<tr class="row-even"><td><p>Tensorflow</p></td>
+<td><p>TIDL_PSDK_8.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFLite-runtime</p></td>
+<td><p>TIDL_PSDK_8.2</p></td>
+</tr>
+<tr class="row-even"><td><p>ONNX-runtime</p></td>
+<td><p>TIDL_PSDK_8.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>PyYAML</p></td>
+<td><p>5.4.1</p></td>
+</tr>
+<tr class="row-even"><td><p>TI Model Zoo</p></td>
+<td><p>8.2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>edgeai-gst-plugins</p></td>
+<td><p>0.6.0</p></td>
+</tr>
+<tr class="row-even"><td><p>edgeai-tiovx-modules</p></td>
+<td><p>8.2.0</p></td>
+</tr>
+<tr class="row-odd"><td><p>edgeai-tidl-tools</p></td>
+<td><p>8.2.0.5</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="release_notes_08_01.html" class="btn btn-neutral float-right" title="Release notes version 08.01.00" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="release_notes.html" class="btn btn-neutral" title="Release Notes" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

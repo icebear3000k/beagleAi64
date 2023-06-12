@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>WiFi Out Of Box Demo - User Guide &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="up" title="Connectivity and Peripherals" href="connectivity.html"/>
+        <link rel="next" title="RPi 40-pin header programming" href="pi_hdr_programming.html"/>
+        <link rel="prev" title="Connectivity and Peripherals" href="connectivity.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">WiFi Out Of Box Demo - User Guide</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hardware-prerequisites">Hardware Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-to-the-board-s-wifi-access-point">Connect to the board’s WiFi Access Point</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-board-as-wifi-station-to-connect-to-external-wifi-ap">Using the board as WiFi Station to connect to external WiFi AP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#measuring-throughput-using-iperf3">Measuring Throughput using iperf3</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pi_hdr_programming.html">RPi 40-pin header programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="connectivity.html">Connectivity and Peripherals</a> &raquo;</li>
+      
+    <li>WiFi Out Of Box Demo - User Guide</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="wifi-out-of-box-demo-user-guide">
+<span id="pub-edgeai-wifi-oob-demo"></span><h1>WiFi Out Of Box Demo - User Guide<a class="headerlink" href="#wifi-out-of-box-demo-user-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The TDA4VM SK board has a PCIe M2E Key interface port (J11) which is connected to the MMC0 port of the SoC.
+Connect the Intel-9260 WiFi card to the PCIe port. The WiFi module can be ordered from
+<a class="reference external" href="https://www.amazon.in/Intel-Wireless-Ac-9260-2230-Gigabit/dp/B079QJQF4Y">https://www.amazon.in/Intel-Wireless-Ac-9260-2230-Gigabit/dp/B079QJQF4Y</a></p>
+<p>Using this, a WiFi Out of Box Demo has been set up such that the board acts as both a WiFi Access Point( AP)
+and a WiFi Station that can connect to an external access point like a router or hotspot, on boot up. The
+board also starts iperf3 automatically on the access point interface and the user can run iperf3 on their
+devices to test the throughput.</p>
+<p>All of the necessary equipment requirement and instructions are provided here.</p>
+</div>
+<div class="section" id="hardware-prerequisites">
+<h2>Hardware Prerequisites<a class="headerlink" href="#hardware-prerequisites" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>TI TDA4VM SK</p></li>
+<li><p>PC (Windows or Linux, to use serial terminal console)</p></li>
+<li><p>PC (Windows or Linux, to connect to the SK board’s WiFi AP)</p></li>
+<li><p>SD card (minimum 16GB)</p></li>
+</ul>
+</div>
+<div class="section" id="connect-to-the-board-s-wifi-access-point">
+<span id="connect-to-wifi-ap"></span><h2>Connect to the board’s WiFi Access Point<a class="headerlink" href="#connect-to-the-board-s-wifi-access-point" title="Permalink to this headline">¶</a></h2>
+<p>Follow the steps below to connect to the WiFi Access Point of the SK board:</p>
+<ol class="arabic simple">
+<li><p>Power on the board. The SK will start the WiFi Access Point(AP) automatically on system boot.</p></li>
+<li><p>Scan for WiFi network from your phone or PC. Each board has a specific AP SSID. For J721E SK
+it will be “J7SK-AP-xxxxxx”.</p></li>
+<li><p>Connect to this network and access the network.</p></li>
+</ol>
+<div class="figure align-default">
+<a class="reference internal image-reference" href="_images/j721esk-ap.png"><img alt="_images/j721esk-ap.png" src="_images/j721esk-ap.png" style="width: 424.5px; height: 323.25px;" /></a>
+</div>
+</div>
+<div class="section" id="using-the-board-as-wifi-station-to-connect-to-external-wifi-ap">
+<h2>Using the board as WiFi Station to connect to external WiFi AP<a class="headerlink" href="#using-the-board-as-wifi-station-to-connect-to-external-wifi-ap" title="Permalink to this headline">¶</a></h2>
+<p>Users can configure the board to connect to AP of their choice (like a home router or a hotspot) using the
+following steps:</p>
+<ol class="arabic">
+<li><p>Modify the /usr/share/intel9260/wificfg file on the rootfs partition of the SD card. You can use a card
+reader to mount the rootfs partition on Windows or Linux PC.</p>
+<p>The default contents of the file are shown below:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp"># This file is used for configuring the credentials required when the</span>
+<span class="cp"># board is acting as a WiFi station.</span>
+<span class="cp"># Customize this as per your need</span>
+<span class="cp"># Set the demo_enable to yes so that the board connects to the AP automatically</span>
+<span class="cp"># after the boot</span>
+
+<span class="p">[</span><span class="n">Wifi</span><span class="o">-</span><span class="n">STA</span><span class="p">]</span>
+<span class="n">demo_enable</span> <span class="o">=</span> <span class="n">no</span>
+<span class="n">ssid</span> <span class="o">=</span> <span class="n">homewifi</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">password123</span>
+</pre></div>
+</div>
+<p>Set demo_enable to yes. Enter the Wi-Fi credentials (Network name and Password) of the AP you want to connect to.
+Do not change the file formatting. In case of AP with no password, leave the password line blank. For example if you
+want to connect to a hotspot named <strong>MyHomeWifi</strong> with <strong>Password123</strong> password, the content should be as shown below:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp"># This file is used for configuring the credentials required when the</span>
+<span class="cp"># board is acting as a WiFi station.</span>
+<span class="cp"># Customize this as per your need</span>
+<span class="cp"># Set the demo_enable to yes so that the board connects to the AP automatically</span>
+<span class="cp"># after the boot</span>
+
+<span class="p">[</span><span class="n">Wifi</span><span class="o">-</span><span class="n">STA</span><span class="p">]</span>
+<span class="n">demo_enable</span> <span class="o">=</span> <span class="n">yes</span>
+<span class="n">ssid</span> <span class="o">=</span> <span class="n">MyHomeWifi</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">Password123</span>
+</pre></div>
+</div>
+</li>
+<li><p>Save the file, safely eject micro SD card, plug it into the SK board and reboot.</p></li>
+<li><p>The SK will read the config file and connect to the external AP automatically on system boot.</p></li>
+<li><p>The user can confirm that the SK is connected to the configured AP by running commands on the board such as:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iw</span> <span class="n">wlp1s0</span> <span class="n">link</span>
+</pre></div>
+</div>
+<p>You will see the connection details displayed like this:</p>
+</li>
+</ol>
+<div class="figure align-default">
+<img alt="_images/wifi-oob-iw-command.png" src="_images/wifi-oob-iw-command.png" />
+</div>
+</div>
+<div class="section" id="measuring-throughput-using-iperf3">
+<h2>Measuring Throughput using iperf3<a class="headerlink" href="#measuring-throughput-using-iperf3" title="Permalink to this headline">¶</a></h2>
+<p>The SK board starts iperf3 automatically on AP interface (IP address 192.168.43.1) on port 6001. Users can run iperf3
+on their PC by following the below steps:</p>
+<ol class="arabic">
+<li><p>Connect a PC to the wifi network of the SK board. Refer <a class="reference internal" href="#connect-to-wifi-ap"><span class="std std-ref">Connect to the board’s WiFi Access Point</span></a> for steps to connect to the AP.</p></li>
+<li><p>Run iperf3 on the PC connected to the AP. For example, the below command tests UDP &#64; 20Mbps for 30 secs:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iperf3</span> <span class="o">-</span><span class="n">c</span> <span class="mf">192.168.43.1</span> <span class="o">-</span><span class="n">u</span> <span class="o">-</span><span class="n">b</span> <span class="mi">20</span><span class="n">M</span> <span class="o">-</span><span class="n">t</span> <span class="mi">30</span> <span class="o">-</span><span class="n">i</span> <span class="mi">5</span> <span class="o">-</span><span class="n">p</span> <span class="mi">6001</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run iperf3 on the PC connected to the AP. For example, the below command tests the maximum possible bandwidth for 30 secs:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">iperf3</span> <span class="o">-</span><span class="n">c</span> <span class="mf">192.168.43.1</span> <span class="o">-</span><span class="n">b</span> <span class="mi">0</span> <span class="o">-</span><span class="n">t</span> <span class="mi">30</span> <span class="o">-</span><span class="n">i</span> <span class="mi">5</span> <span class="o">-</span><span class="n">p</span> <span class="mi">6001</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="pi_hdr_programming.html" class="btn btn-neutral float-right" title="RPi 40-pin header programming" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="connectivity.html" class="btn btn-neutral" title="Connectivity and Peripherals" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

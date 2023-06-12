@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Datasheet &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="Test Report" href="test_report.html"/>
+        <link rel="prev" title="Release notes version 00.04.02" href="release_notes_00_04.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Datasheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-usb-camera">Source             : <strong>USB Camera</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-video">Source             : <strong>Video</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-csi-camera-ov5640">Source             : <strong>CSI Camera (ov5640)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-csi-camera-with-viss-imx219">Source             : <strong>CSI Camera with VISS (imx219)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-imx390-over-fpd-link">Source             : <strong>IMX390 over FPD-Link</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Datasheet</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="datasheet">
+<h1>Datasheet<a class="headerlink" href="#datasheet" title="Permalink to this headline">¶</a></h1>
+<p>This chapter describes the performance measurements of the Edge AI Inference
+demos.</p>
+<p>Performance data of the demos can be auto generated by running following
+command on target:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps/tests# ./gen_data_sheet.sh
+</pre></div>
+</div>
+<p>The performence measurements includes the following</p>
+<ol class="arabic simple">
+<li><p><strong>FPS</strong> : Effective framerate at which the application runs</p></li>
+<li><p><strong>Total time</strong> : Average time taken to process each frame, which includes
+pre-processing, inference and post-processing time</p></li>
+<li><p><strong>Inference time</strong> : Average time taken to infer each frame</p></li>
+<li><p><strong>CPU loading</strong> : Loading on different CPU cores present</p></li>
+<li><p><strong>DDR BW</strong> : DDR read and write BW used</p></li>
+<li><p><strong>HWA Loading</strong> : Loading on different Hardware accelerators present</p></li>
+</ol>
+<p>Following are the latest performance numbers of the C++ demos:</p>
+<div class="section" id="source-usb-camera">
+<h2>Source             : <strong>USB Camera</strong><a class="headerlink" href="#source-usb-camera" title="Permalink to this headline">¶</a></h2>
+<p>Capture Framerate  : <strong>30 fps</strong>
+Resolution         : <strong>720p</strong>
+format             : <strong>JPEG</strong></p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/edgeai_object_detection.png"><img alt="_images/edgeai_object_detection.png" src="_images/edgeai_object_detection.png" style="width: 982.8px; height: 514.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 26 </span><span class="caption-text">GStreamer based data-flow pipeline with USB camera input and display output</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>FPS</p></th>
+<th class="head"><p>Total time (ms)</p></th>
+<th class="head"><p>Inference time (ms)</p></th>
+<th class="head"><p>A72 Load (%)</p></th>
+<th class="head"><p>DDR Read BW (MB/s)</p></th>
+<th class="head"><p>DDR Write BW (MB/s)</p></th>
+<th class="head"><p>DDR Total BW (MB/s)</p></th>
+<th class="head"><p>C71 Load (%)</p></th>
+<th class="head"><p>C66_1 Load (%)</p></th>
+<th class="head"><p>C66_2 Load (%)</p></th>
+<th class="head"><p>MCU2_0 Load (%)</p></th>
+<th class="head"><p>MCU2_1 Load (%)</p></th>
+<th class="head"><p>MSC_0 (%)</p></th>
+<th class="head"><p>MSC_1 (%)</p></th>
+<th class="head"><p>VISS (%)</p></th>
+<th class="head"><p>NF (%)</p></th>
+<th class="head"><p>LDC (%)</p></th>
+<th class="head"><p>SDE (%)</p></th>
+<th class="head"><p>DOF (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ONR-CL-6150-mobileNetV2-1p4-qat</p></td>
+<td><p>30.80</p></td>
+<td><p>33.22</p></td>
+<td><p>3.02</p></td>
+<td><p>21.60</p></td>
+<td><p>1596</p></td>
+<td><p>619</p></td>
+<td><p>2215</p></td>
+<td><p>9.0</p></td>
+<td><p>20.0</p></td>
+<td><p>9.0</p></td>
+<td><p>6.0</p></td>
+<td><p>1.0</p></td>
+<td><p>22.17</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFL-CL-0000-mobileNetV1-mlperf</p></td>
+<td><p>30.69</p></td>
+<td><p>33.19</p></td>
+<td><p>1.04</p></td>
+<td><p>15.93</p></td>
+<td><p>1425</p></td>
+<td><p>563</p></td>
+<td><p>1988</p></td>
+<td><p>5.0</p></td>
+<td><p>22.0</p></td>
+<td><p>9.0</p></td>
+<td><p>6.0</p></td>
+<td><p>1.0</p></td>
+<td><p>21.90</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320</p></td>
+<td><p>30.69</p></td>
+<td><p>33.25</p></td>
+<td><p>5.00</p></td>
+<td><p>10.24</p></td>
+<td><p>1534</p></td>
+<td><p>570</p></td>
+<td><p>2104</p></td>
+<td><p>15.0</p></td>
+<td><p>29.0</p></td>
+<td><p>9.0</p></td>
+<td><p>6.0</p></td>
+<td><p>1.0</p></td>
+<td><p>22.67</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TVM-CL-3410-gluoncv-mxnet-mobv2</p></td>
+<td><p>30.58</p></td>
+<td><p>33.21</p></td>
+<td><p>2.02</p></td>
+<td><p>22.80</p></td>
+<td><p>1522</p></td>
+<td><p>617</p></td>
+<td><p>2139</p></td>
+<td><p>6.0</p></td>
+<td><p>20.0</p></td>
+<td><p>9.0</p></td>
+<td><p>6.0</p></td>
+<td><p>1.0</p></td>
+<td><p>21.84</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="source-video">
+<h2>Source             : <strong>Video</strong><a class="headerlink" href="#source-video" title="Permalink to this headline">¶</a></h2>
+<p>Video Framerate    : <strong>30 fps</strong>
+Resolution         : <strong>720p</strong>
+Encoding           : <strong>h264</strong></p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/edgeai_video_source.png"><img alt="_images/edgeai_video_source.png" src="_images/edgeai_video_source.png" style="width: 973.8px; height: 502.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 27 </span><span class="caption-text">GStreamer based data-flow pipeline with video file input source and display output</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>FPS</p></th>
+<th class="head"><p>Total time (ms)</p></th>
+<th class="head"><p>Inference time (ms)</p></th>
+<th class="head"><p>A72 Load (%)</p></th>
+<th class="head"><p>DDR Read BW (MB/s)</p></th>
+<th class="head"><p>DDR Write BW (MB/s)</p></th>
+<th class="head"><p>DDR Total BW (MB/s)</p></th>
+<th class="head"><p>C71 Load (%)</p></th>
+<th class="head"><p>C66_1 Load (%)</p></th>
+<th class="head"><p>C66_2 Load (%)</p></th>
+<th class="head"><p>MCU2_0 Load (%)</p></th>
+<th class="head"><p>MCU2_1 Load (%)</p></th>
+<th class="head"><p>MSC_0 (%)</p></th>
+<th class="head"><p>MSC_1 (%)</p></th>
+<th class="head"><p>VISS (%)</p></th>
+<th class="head"><p>NF (%)</p></th>
+<th class="head"><p>LDC (%)</p></th>
+<th class="head"><p>SDE (%)</p></th>
+<th class="head"><p>DOF (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ONR-CL-6150-mobileNetV2-1p4-qat</p></td>
+<td><p>30.52</p></td>
+<td><p>33.46</p></td>
+<td><p>3.03</p></td>
+<td><p>14.28</p></td>
+<td><p>990</p></td>
+<td><p>403</p></td>
+<td><p>1393</p></td>
+<td><p>2.0</p></td>
+<td><p>7.0</p></td>
+<td><p>4.0</p></td>
+<td><p>1.0</p></td>
+<td><p>1.0</p></td>
+<td><p>10.27</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFL-CL-0000-mobileNetV1-mlperf</p></td>
+<td><p>30.77</p></td>
+<td><p>33.47</p></td>
+<td><p>1.07</p></td>
+<td><p>30.76</p></td>
+<td><p>746</p></td>
+<td><p>97</p></td>
+<td><p>843</p></td>
+<td><p>2.0</p></td>
+<td><p>2.0</p></td>
+<td><p>1.0</p></td>
+<td><p>1.0</p></td>
+<td><p>1.0</p></td>
+<td><p>15.76</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320</p></td>
+<td><p>30.56</p></td>
+<td><p>33.54</p></td>
+<td><p>5.06</p></td>
+<td><p>22.58</p></td>
+<td><p>736</p></td>
+<td><p>92</p></td>
+<td><p>828</p></td>
+<td><p>2.0</p></td>
+<td><p>2.0</p></td>
+<td><p>1.0</p></td>
+<td><p>1.0</p></td>
+<td><p>1.0</p></td>
+<td><p>16.9</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TVM-CL-3410-gluoncv-mxnet-mobv2</p></td>
+<td><p>30.64</p></td>
+<td><p>33.47</p></td>
+<td><p>2.01</p></td>
+<td><p>33.33</p></td>
+<td><p>712</p></td>
+<td><p>110</p></td>
+<td><p>822</p></td>
+<td><p>1.0</p></td>
+<td><p>1.0</p></td>
+<td><p>0.0</p></td>
+<td><p>1.0</p></td>
+<td><p>1.0</p></td>
+<td><p>15.3</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="source-csi-camera-ov5640">
+<h2>Source             : <strong>CSI Camera (ov5640)</strong><a class="headerlink" href="#source-csi-camera-ov5640" title="Permalink to this headline">¶</a></h2>
+<p>Capture Framerate  : <strong>30 fps</strong>
+Resolution         : <strong>720p</strong>
+format             : <strong>YUYV</strong></p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/edgeai_ov5640_camera_source.png"><img alt="_images/edgeai_ov5640_camera_source.png" src="_images/edgeai_ov5640_camera_source.png" style="width: 1125.0px; height: 589.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 28 </span><span class="caption-text">GStreamer based data-flow pipeline for with CSI camera (OV5640) input and display output</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>FPS</p></th>
+<th class="head"><p>Total time (ms)</p></th>
+<th class="head"><p>Inference time (ms)</p></th>
+<th class="head"><p>A72 Load (%)</p></th>
+<th class="head"><p>DDR Read BW (MB/s)</p></th>
+<th class="head"><p>DDR Write BW (MB/s)</p></th>
+<th class="head"><p>DDR Total BW (MB/s)</p></th>
+<th class="head"><p>C71 Load (%)</p></th>
+<th class="head"><p>C66_1 Load (%)</p></th>
+<th class="head"><p>C66_2 Load (%)</p></th>
+<th class="head"><p>MCU2_0 Load (%)</p></th>
+<th class="head"><p>MCU2_1 Load (%)</p></th>
+<th class="head"><p>MSC_0 (%)</p></th>
+<th class="head"><p>MSC_1 (%)</p></th>
+<th class="head"><p>VISS (%)</p></th>
+<th class="head"><p>NF (%)</p></th>
+<th class="head"><p>LDC (%)</p></th>
+<th class="head"><p>SDE (%)</p></th>
+<th class="head"><p>DOF (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ONR-CL-6150-mobileNetV2-1p4-qat</p></td>
+<td><p>29.57</p></td>
+<td><p>34.09</p></td>
+<td><p>3.02</p></td>
+<td><p>12.21</p></td>
+<td><p>1671</p></td>
+<td><p>699</p></td>
+<td><p>2370</p></td>
+<td><p>8.0</p></td>
+<td><p>45.0</p></td>
+<td><p>9.0</p></td>
+<td><p>6.0</p></td>
+<td><p>1.0</p></td>
+<td><p>21.35</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFL-CL-0000-mobileNetV1-mlperf</p></td>
+<td><p>29.41</p></td>
+<td><p>34.15</p></td>
+<td><p>1.01</p></td>
+<td><p>10.27</p></td>
+<td><p>1502</p></td>
+<td><p>645</p></td>
+<td><p>2147</p></td>
+<td><p>5.0</p></td>
+<td><p>47.0</p></td>
+<td><p>9.0</p></td>
+<td><p>6.0</p></td>
+<td><p>1.0</p></td>
+<td><p>20.96</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320</p></td>
+<td><p>29.36</p></td>
+<td><p>34.65</p></td>
+<td><p>5.00</p></td>
+<td><p>10.5</p></td>
+<td><p>1610</p></td>
+<td><p>655</p></td>
+<td><p>2265</p></td>
+<td><p>14.0</p></td>
+<td><p>53.0</p></td>
+<td><p>9.0</p></td>
+<td><p>6.0</p></td>
+<td><p>1.0</p></td>
+<td><p>21.47</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TVM-CL-3410-gluoncv-mxnet-mobv2</p></td>
+<td><p>29.38</p></td>
+<td><p>34.17</p></td>
+<td><p>2.01</p></td>
+<td><p>11.66</p></td>
+<td><p>1596</p></td>
+<td><p>698</p></td>
+<td><p>2294</p></td>
+<td><p>6.0</p></td>
+<td><p>45.0</p></td>
+<td><p>9.0</p></td>
+<td><p>5.0</p></td>
+<td><p>1.0</p></td>
+<td><p>21.10</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="source-csi-camera-with-viss-imx219">
+<h2>Source             : <strong>CSI Camera with VISS (imx219)</strong><a class="headerlink" href="#source-csi-camera-with-viss-imx219" title="Permalink to this headline">¶</a></h2>
+<p>Capture Framerate  : <strong>30 fps</strong>
+Resolution         : <strong>1080p</strong>
+format             : <strong>SRGGB8</strong></p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/edgeai_rpi_camera_source.png"><img alt="_images/edgeai_rpi_camera_source.png" src="_images/edgeai_rpi_camera_source.png" style="width: 970.8px; height: 517.1999999999999px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 29 </span><span class="caption-text">GStreamer based data-flow pipeline with IMX219 sensor, ISP and display</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>FPS</p></th>
+<th class="head"><p>Total time (ms)</p></th>
+<th class="head"><p>Inference time (ms)</p></th>
+<th class="head"><p>A72 Load (%)</p></th>
+<th class="head"><p>DDR Read BW (MB/s)</p></th>
+<th class="head"><p>DDR Write BW (MB/s)</p></th>
+<th class="head"><p>DDR Total BW (MB/s)</p></th>
+<th class="head"><p>C71 Load (%)</p></th>
+<th class="head"><p>C66_1 Load (%)</p></th>
+<th class="head"><p>C66_2 Load (%)</p></th>
+<th class="head"><p>MCU2_0 Load (%)</p></th>
+<th class="head"><p>MCU2_1 Load (%)</p></th>
+<th class="head"><p>MSC_0 (%)</p></th>
+<th class="head"><p>MSC_1 (%)</p></th>
+<th class="head"><p>VISS (%)</p></th>
+<th class="head"><p>NF (%)</p></th>
+<th class="head"><p>LDC (%)</p></th>
+<th class="head"><p>SDE (%)</p></th>
+<th class="head"><p>DOF (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ONR-CL-6150-mobileNetV2-1p4-qat</p></td>
+<td><p>30.64</p></td>
+<td><p>33.19</p></td>
+<td><p>3.01</p></td>
+<td><p>15.72</p></td>
+<td><p>1781</p></td>
+<td><p>853</p></td>
+<td><p>2634</p></td>
+<td><p>9.0</p></td>
+<td><p>16.0</p></td>
+<td><p>9.0</p></td>
+<td><p>13.0</p></td>
+<td><p>1.0</p></td>
+<td><p>31.78</p></td>
+<td><p>0</p></td>
+<td><p>22.37</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFL-CL-0000-mobileNetV1-mlperf</p></td>
+<td><p>30.59</p></td>
+<td><p>33.14</p></td>
+<td><p>1.04</p></td>
+<td><p>12.78</p></td>
+<td><p>1612</p></td>
+<td><p>798</p></td>
+<td><p>2410</p></td>
+<td><p>5.0</p></td>
+<td><p>18.0</p></td>
+<td><p>9.0</p></td>
+<td><p>13.0</p></td>
+<td><p>1.0</p></td>
+<td><p>31.65</p></td>
+<td><p>0</p></td>
+<td><p>22.31</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320</p></td>
+<td><p>30.56</p></td>
+<td><p>33.07</p></td>
+<td><p>5.00</p></td>
+<td><p>13.30</p></td>
+<td><p>1730</p></td>
+<td><p>809</p></td>
+<td><p>2539</p></td>
+<td><p>15.0</p></td>
+<td><p>25.0</p></td>
+<td><p>9.0</p></td>
+<td><p>13.0</p></td>
+<td><p>1.0</p></td>
+<td><p>32.6</p></td>
+<td><p>0</p></td>
+<td><p>22.19</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TVM-CL-3410-gluoncv-mxnet-mobv2</p></td>
+<td><p>30.48</p></td>
+<td><p>33.14</p></td>
+<td><p>2.01</p></td>
+<td><p>12.91</p></td>
+<td><p>1708</p></td>
+<td><p>852</p></td>
+<td><p>2560</p></td>
+<td><p>7.0</p></td>
+<td><p>16.0</p></td>
+<td><p>9.0</p></td>
+<td><p>13.0</p></td>
+<td><p>1.0</p></td>
+<td><p>31.83</p></td>
+<td><p>0</p></td>
+<td><p>22.26</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="source-imx390-over-fpd-link">
+<h2>Source             : <strong>IMX390 over FPD-Link</strong><a class="headerlink" href="#source-imx390-over-fpd-link" title="Permalink to this headline">¶</a></h2>
+<p>Capture Framerate  : <strong>30 fps</strong>
+Resolution         : <strong>1080p</strong>
+format             : <strong>SRGGB12</strong></p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/edgeai_imx390_camera_source.png"><img alt="_images/edgeai_imx390_camera_source.png" src="_images/edgeai_imx390_camera_source.png" style="width: 1094.3999999999999px; height: 594.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 30 </span><span class="caption-text">GStreamer based data-flow pipeline with IMX390 sensor, ISP, LDC and display</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Model</p></th>
+<th class="head"><p>FPS</p></th>
+<th class="head"><p>Total time (ms)</p></th>
+<th class="head"><p>Inference time (ms)</p></th>
+<th class="head"><p>A72 Load (%)</p></th>
+<th class="head"><p>DDR Read BW (MB/s)</p></th>
+<th class="head"><p>DDR Write BW (MB/s)</p></th>
+<th class="head"><p>DDR Total BW (MB/s)</p></th>
+<th class="head"><p>C71 Load (%)</p></th>
+<th class="head"><p>C66_1 Load (%)</p></th>
+<th class="head"><p>C66_2 Load (%)</p></th>
+<th class="head"><p>MCU2_0 Load (%)</p></th>
+<th class="head"><p>MCU2_1 Load (%)</p></th>
+<th class="head"><p>MSC_0 (%)</p></th>
+<th class="head"><p>MSC_1 (%)</p></th>
+<th class="head"><p>VISS (%)</p></th>
+<th class="head"><p>NF (%)</p></th>
+<th class="head"><p>LDC (%)</p></th>
+<th class="head"><p>SDE (%)</p></th>
+<th class="head"><p>DOF (%)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ONR-CL-6150-mobileNetV2-1p4-qat</p></td>
+<td><p>30.59</p></td>
+<td><p>33.15</p></td>
+<td><p>3.09</p></td>
+<td><p>25.18</p></td>
+<td><p>2207</p></td>
+<td><p>1102</p></td>
+<td><p>3309</p></td>
+<td><p>10.0</p></td>
+<td><p>16.0</p></td>
+<td><p>9.0</p></td>
+<td><p>14.0</p></td>
+<td><p>1.0</p></td>
+<td><p>31.73</p></td>
+<td><p>0</p></td>
+<td><p>22.94</p></td>
+<td><p>0</p></td>
+<td><p>10.8</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>TFL-CL-0000-mobileNetV1-mlperf</p></td>
+<td><p>30.53</p></td>
+<td><p>33.15</p></td>
+<td><p>1.21</p></td>
+<td><p>16.20</p></td>
+<td><p>2019</p></td>
+<td><p>1040</p></td>
+<td><p>3059</p></td>
+<td><p>5.0</p></td>
+<td><p>18.0</p></td>
+<td><p>9.0</p></td>
+<td><p>15.0</p></td>
+<td><p>1.0</p></td>
+<td><p>32.80</p></td>
+<td><p>0</p></td>
+<td><p>23.34</p></td>
+<td><p>0</p></td>
+<td><p>10.10</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>TFL-OD-2020-ssdLite-mobDet-DSP-coco-320x320</p></td>
+<td><p>30.43</p></td>
+<td><p>33.13</p></td>
+<td><p>5.02</p></td>
+<td><p>23.7</p></td>
+<td><p>2201</p></td>
+<td><p>1067</p></td>
+<td><p>3268</p></td>
+<td><p>15.0</p></td>
+<td><p>25.0</p></td>
+<td><p>9.0</p></td>
+<td><p>14.0</p></td>
+<td><p>1.0</p></td>
+<td><p>32.80</p></td>
+<td><p>0</p></td>
+<td><p>22.88</p></td>
+<td><p>0</p></td>
+<td><p>9.95</p></td>
+<td><p>0</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>TVM-CL-3410-gluoncv-mxnet-mobv2</p></td>
+<td><p>30.44</p></td>
+<td><p>33.16</p></td>
+<td><p>2.12</p></td>
+<td><p>21.50</p></td>
+<td><p>2111</p></td>
+<td><p>1100</p></td>
+<td><p>3211</p></td>
+<td><p>7.0</p></td>
+<td><p>16.0</p></td>
+<td><p>9.0</p></td>
+<td><p>15.0</p></td>
+<td><p>1.0</p></td>
+<td><p>32.28</p></td>
+<td><p>0</p></td>
+<td><p>22.88</p></td>
+<td><p>0</p></td>
+<td><p>10.6</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="test_report.html" class="btn btn-neutral float-right" title="Test Report" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="release_notes_00_04.html" class="btn btn-neutral" title="Release notes version 00.04.02" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

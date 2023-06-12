@@ -1,0 +1,442 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>SDK Development flow &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="FAQs" href="faq.html"/>
+        <link rel="prev" title="Test Report" href="test_report.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SDK Development flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getting-psdk-rtos">Getting PSDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-rtos-sdk-from-source">Building the RTOS SDK from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-psdk-linux">Getting PSDK LINUX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-linux-sdk-from-source">Building the LINUX SDK from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#applications-setup">Applications setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#target-side-steps">Target side steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>SDK Development flow</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="sdk-development-flow">
+<span id="pub-edgeai-sdk-development-flow"></span><h1>SDK Development flow<a class="headerlink" href="#sdk-development-flow" title="Permalink to this headline">¶</a></h1>
+<p>Processor SDK Linux for Edge AI comprises of 3 parts,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Edge AI Applications</p></li>
+<li><p>Processor SDK - Linux</p></li>
+<li><p>Processor SDK - RTOS</p></li>
+</ul>
+</div></blockquote>
+<p>If you wish to work with just the <strong>Edge AI Applications</strong>, you can edit-build-run
+directly on the target by flashing the etcher image as specified
+in <a class="reference internal" href="getting_started.html#pub-edgeai-prepare-sd-card"><span class="std std-ref">Preparing SD card image</span></a>. <strong>No need to build the RTOS binaries
+as described below!</strong></p>
+<p>If you are modifying any RTOS components such as vision_apps, tiovx, tidl,
+tiadalg etc. you will need to rebuilt the RTOS binaries and update the SD card
+filesystem with the latest. This requires the Processor SDK RTOS source package
+and Processor SDK Linux filesystem packages.</p>
+<p>If you are modifying any Linux DTBs, updating u-boot, updating system firmware (sysfw),
+device driver and so on, you will need the Processor SDK Linux source package.</p>
+<div class="section" id="getting-psdk-rtos">
+<h2>Getting PSDK RTOS<a class="headerlink" href="#getting-psdk-rtos" title="Permalink to this headline">¶</a></h2>
+<p>You can download the latest Processor SDK RTOS for TDA4VM from the below links,</p>
+<p>The Processor SDK RTOS source package:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://software-dl.ti.com/jacinto7/esd/processor-sdk-rtos-jacinto7/08_02_00_06/exports/ti-processor-sdk-rtos-j721e-evm-08_02_00_06.tar.gz</span></code></p>
+<p>The Processor SDK Linux filesystem and BOOT partition files are also required:</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-jacinto7/08_02_00_04/exports/tisdk-default-image-j7-evm.tar.xz</span></code>
+<code class="docutils literal notranslate"><span class="pre">https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-jacinto7/08_02_00_04/exports/boot-j7-evm.tar.gz</span></code></p>
+</div>
+<div class="section" id="building-the-rtos-sdk-from-source">
+<h2>Building the RTOS SDK from source<a class="headerlink" href="#building-the-rtos-sdk-from-source" title="Permalink to this headline">¶</a></h2>
+<p>Untar the ti-processor-sdk-rtos-j721e-evm-08_02_00_xx.tar.gz to some location
+on PC and copy the tisdk-default-image-j7-evm.tar.xz and boot-j7-evm.tar.gz
+into the RTOS SDK folder. Execute the <code class="docutils literal notranslate"><span class="pre">setup_psdk_rtos.sh</span></code> script from the
+folder below. This will untar the linux filesystem, download GCC cross compile
+toolchain and dependencies all in preparation to build the SDK</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Run the setup script as shown</span>
+&lt;PSDK-RTOS path&gt;#./psdk_rtos/scripts/setup_psdk_rtos.sh
+</pre></div>
+</div>
+<p>Ensure that you are building only for the <code class="docutils literal notranslate"><span class="pre">target</span></code> and the profile is set to
+<code class="docutils literal notranslate"><span class="pre">release</span></code> mode. In the file <code class="docutils literal notranslate"><span class="pre">&lt;PSDK-RTOS</span> <span class="pre">path&gt;/tiovx/build_flags.mak</span></code>
+check for,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Build for SoC</span>
+BUILD_TARGET_MODE?<span class="o">=</span>yes
+<span class="c1"># Build for x86 PC</span>
+BUILD_EMULATION_MODE?<span class="o">=</span>no
+<span class="c1"># valid values: release debug all</span>
+PROFILE?<span class="o">=</span>release
+</pre></div>
+</div>
+<p>Navigate to vision_apps folder and build the RTOS components</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;PSDK-RTOS path&gt;/vision_apps#BUILD_EDGEAI<span class="o">=</span>yes make sdk -j8
+</pre></div>
+</div>
+<p>Once the build is complete with no errors install the Linux filesystem to
+an SD card. A <strong>minimum of 16GB</strong> is highly recommended. Insert an SD card
+and unmount its partitions. If you had previously installed using the same
+SD card, you might have to unmount the BOOT and rootfs partitions</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">/dev/sda1</span></code> and <code class="docutils literal notranslate"><span class="pre">/dev/sda2</span></code> are just examples here, and the SD card might
+be mounted differently on your system. Ensure that you are unmounting the
+correct partitions before reformatting the SD card!</p>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>umount /dev/sda1
+umount /dev/sda2
+</pre></div>
+</div>
+<p>Use the script to create required partitions and filesystem format. This will
+create two partitions namely BOOT and rootfs</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;PSDK-RTOS path&gt;#sudo ./psdk_rtos/scripts/mk-linux-card.sh /dev/sda
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Follow the interactive menu (mostly press Y and Y) to correctly format the
+SD card for Linux boot. Once successfully complete, PLEASE EJECT THE SD CARD
+AND INSERT AGAIN. This ensures that files are not installed under root
+permissions and the follwing steps do not require sudo permissions</p>
+</div>
+<p>Use another script to install the filesystem to the rootfs partition</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;PSDK-RTOS path&gt;#./psdk_rtos/scripts/install_to_sd_card.sh
+</pre></div>
+</div>
+<p>Next transfer the RTOS component libraries, header files and remote core
+binaries to the SD card.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&lt;PSDK-RTOS path&gt;/vision_apps# <span class="nv">BUILD_EDGEAI</span><span class="o">=</span>yes make linux_fs_install_sd
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Installs the <code class="docutils literal notranslate"><span class="pre">vision_apps.so</span></code> library under <code class="docutils literal notranslate"><span class="pre">/usr/lib</span></code></p></li>
+<li><p>Copies the vision_apps headers under <code class="docutils literal notranslate"><span class="pre">/usr/include/processor_sdk</span></code> folder</p></li>
+<li><p>Copies the RTOS binaries under <code class="docutils literal notranslate"><span class="pre">/usr/lib/firmware</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="getting-psdk-linux">
+<h2>Getting PSDK LINUX<a class="headerlink" href="#getting-psdk-linux" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can skip this step if you dont intend to change anything on the
+Linux kernel, u-boot or file-system.</p>
+</div>
+<p>You can download the latest Processor SDK Linux for TDA4VM from the below link,</p>
+<p><code class="docutils literal notranslate"><span class="pre">https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-jacinto7/08_02_00_04/exports/ti-processor-sdk-linux-j7-evm-08_02_00_04-Linux-x86-Install.bin</span></code></p>
+<p>Please refer to <a class="reference external" href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-jacinto7/08_02_00_03/exports/docs/linux/Overview/Download_and_Install_the_SDK.html">Processor SDK Linux documentation</a>
+for installation steps.</p>
+</div>
+<div class="section" id="building-the-linux-sdk-from-source">
+<h2>Building the LINUX SDK from source<a class="headerlink" href="#building-the-linux-sdk-from-source" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to <a class="reference external" href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-jacinto7/08_02_00_03/exports/docs/linux/Overview_Top_Level_Makefile.html">Simplified SDK Build</a>
+for quick changes and build in u-boot, sysfw (system firmware) and linux kernel.</p>
+<p>Please refer to <a class="reference external" href="https://software-dl.ti.com/jacinto7/esd/processor-sdk-linux-jacinto7/08_02_00_03/exports/docs/linux/Overview_Building_the_SDK.html">Building SDK with Yocto</a>
+for building each individual components. This will require a longer time to build and a powerful machine.</p>
+<p>** This completes the PSDK Linux and RTOS setup **</p>
+</div>
+<div class="section" id="applications-setup">
+<h2>Applications setup<a class="headerlink" href="#applications-setup" title="Permalink to this headline">¶</a></h2>
+<p>At this point the SD card is ready with Linux image and RTOS components.
+Next we need to clone the target side components under SD card <code class="docutils literal notranslate"><span class="pre">/opt</span></code>
+If the provided steps are not executing you might have to provide permissions
+for the scripts to make directory under SD card /opt.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You need to change permissions on SD card /opt folder NOT your Linux PC
+/opt folder. Change permissions of SD card /opt directory
+<code class="docutils literal notranslate"><span class="pre">/media/&lt;user-name&gt;/rootfs#</span> <span class="pre">sudo</span> <span class="pre">chmod</span> <span class="pre">-R</span> <span class="pre">ugo+w</span> <span class="pre">opt</span></code></p>
+</div>
+<p>First clone the <code class="docutils literal notranslate"><span class="pre">edge_ai_apps</span></code> repo into the SD card under <code class="docutils literal notranslate"><span class="pre">/opt</span></code></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/media/&lt;user-name&gt;/rootfs/opt#git clone --single-branch --branch master git://git.ti.com/edgeai/edge_ai_apps.git
+</pre></div>
+</div>
+<p>Once edge_ai_apps is cloned, on the PC itself run the <code class="docutils literal notranslate"><span class="pre">setup_script.sh</span></code>.
+This will clone and install DL dependencies, clone the edgeai-gst-plugins and
+edgeai-tiovx-modules repo on the SD card /opt.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/media/&lt;user-name&gt;/rootfs/opt/edge_ai_apps#./setup_script.sh
+</pre></div>
+</div>
+<p>Also download the recommended set of models or any model that you would like
+to test by running the <code class="docutils literal notranslate"><span class="pre">download_models.sh</span></code> script.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/media/&lt;user-name&gt;/rootfs/opt/edge_ai_apps#./download_models.sh --recommended
+</pre></div>
+</div>
+<p>** This completes the setup required on PC side **</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Before ejecting the SD card issue a ‘sync’ on the terminal to commit all
+changes.</p>
+</div>
+</div>
+<div class="section" id="target-side-steps">
+<h2>Target side steps<a class="headerlink" href="#target-side-steps" title="Permalink to this headline">¶</a></h2>
+<p>Boot the SK with the prepared SD card. Make sure you have connected the
+camera and display. After boot, login as ‘root’ with no password. If you have
+flashed the SD card using Balena etcher tool, then upon login you will notice
+the wallpaper displayed on the screen disappears and comes back. The prompt will
+also change to <code class="docutils literal notranslate"><span class="pre">/opt/edge_ai_apps#</span></code>. This is done by automatically calling the
+<code class="docutils literal notranslate"><span class="pre">init_script.sh</span></code></p>
+<p>If you are building from scratch, upon login you will notice that the wallpaper
+is still displayed on the screen. The init_script.sh is not automatically
+called during login. You will have to manually navigate to edge_ai_apps repo
+and execute every time it boots or call it under .profile</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps#./init_script.sh
+</pre></div>
+</div>
+<p>Only for first time, you will have to run the setup_script.sh once again. This time
+it will not download the dependencies but compile and install the edgeai-gst-plugins,
+edgeai-tiovx-modules and apps_cpp demos</p>
+<p><strong>Now you are ready to run the Python and C++ demos!</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>IMPORTANT: Due to differences in GLIB version between Yocto and Docker you
+will have to rebuild the GST plugins and C++ apps when you make the switch.
+So always call the setup_script.sh to rebuild the plugins and C++ apps for
+Yocto/Docker while switching.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="faq.html" class="btn btn-neutral float-right" title="FAQs" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="test_report.html" class="btn btn-neutral" title="Test Report" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

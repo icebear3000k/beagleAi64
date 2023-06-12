@@ -1,0 +1,602 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting Started &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="Running Simple demos" href="running_simple_demos.html"/>
+        <link rel="prev" title="Processor SDK Linux for Edge AI" href="sdk_overview.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hardware-setup">Hardware setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#tda4vm-sk">TDA4VM SK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usb-camera">USB Camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ov5640-yuv-sensor">OV5640 YUV sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rpiv2-imx219-raw-sensor">RPiV2(IMX219) Raw sensor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#imx390-raw-sensor">IMX390 Raw sensor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#software-setup">Software setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#preparing-sd-card-image">Preparing SD card image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power-on-and-boot">Power ON and Boot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#connect-remotely">Connect remotely</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#installing-dependencies">Installing Dependencies</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Getting Started</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="getting-started">
+<span id="pub-edgeai-getting-started"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hardware-setup">
+<span id="pub-edgeai-getting-started-harware"></span><h2>Hardware setup<a class="headerlink" href="#hardware-setup" title="Permalink to this headline">¶</a></h2>
+<p>TI’s TDA4VM SoC houses dual core A72, high performance vision
+accelerators, video codec accelerators, latest C71x and C66x DSP, high bandwidth
+realtime IPs for capture and display, GPU, dedicated safety island and security
+accelerators. The SoC is power optimized to provide best in class performance
+for perception, sensor fusion, localization and path planning tasks in robotics,
+industrial and automotive applications.</p>
+<p>For more details visit <a class="reference external" href="https://www.ti.com/product/TDA4VM">https://www.ti.com/product/TDA4VM</a></p>
+<div class="section" id="tda4vm-sk">
+<span id="pub-edgeai-hw-requirements-eaik"></span><h3>TDA4VM SK<a class="headerlink" href="#tda4vm-sk" title="Permalink to this headline">¶</a></h3>
+<p>TDA4VM Edge AI Starter Kit (SK) is a low cost, small form factor board designed
+to bring smart cameras, robots and intelligent machines to life.
+For more information related to the board, full list of peripherals supported,
+pin settings for boot modes and more
+visit <a class="reference external" href="https://www.ti.com/lit/pdf/spruj21">TDA4VM-EdgeAI-SK</a>.</p>
+<p>To run the demos on TDA4VM SK you will require,</p>
+<blockquote>
+<div><ul>
+<li><p>TDA4VM Edge AI Starter Kit</p></li>
+<li><p>USB camera (Any V4L2 compliant 1MP/2MP camera, Eg. Logitech C270/C920/C922)</p></li>
+<li><p>Full HD eDP/HDMI display</p></li>
+<li><p>Minimum 16GB high performance SD card</p></li>
+<li><p>100Base-T Ethernet cable connected to internet</p></li>
+<li><p>UART cable</p></li>
+<li><p>External Power Supply or Power Accessory Requirements</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>Nominal Output Voltage: 5-20VDC</p></li>
+<li><p>Maximum Output Current: 5000 mA</p></li>
+<li><p>Refer to <a class="reference external" href="https://www.ti.com/lit/pdf/spruj21">TDA4VM-EdgeAI-SK</a>
+for more details.</p></li>
+</ol>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>Connect the components to the SK as shown in the image.</p>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/board_connections_tda4vm_sk.jpg"><img alt="_images/board_connections_tda4vm_sk.jpg" src="_images/board_connections_tda4vm_sk.jpg" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">TDA4VM Starter Kit for Edge AI connections</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+<p>Set the boot pins to SD boot mode as shown in the following image.</p>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/TDA4VM-SK-SD-Boot.png"><img alt="_images/TDA4VM-SK-SD-Boot.png" src="_images/TDA4VM-SK-SD-Boot.png" style="width: 351.3px; height: 286.5px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">TDA4VM Starter Kit for Edge AI boot pins</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="usb-camera">
+<span id="pub-edgeai-usb-camera"></span><h3>USB Camera<a class="headerlink" href="#usb-camera" title="Permalink to this headline">¶</a></h3>
+<p>UVC (USB video class) compliant USB cameras are supported on the starter kit.
+The driver for the same is enabled in SDK. The SDK has been tested with
+C270/C920/C922 versions of Logitech USB cameras. Please refer to
+<a class="reference internal" href="faq.html#pub-edgeai-multiple-usb-cams"><span class="std std-ref">Getting Error when trying to capture from multiple USB cameras simultaneously</span></a> to stream from multiple USB cameras
+simultaneously.</p>
+</div>
+<div class="section" id="ov5640-yuv-sensor">
+<span id="pub-edgeai-ov5640-sensor"></span><h3>OV5640 YUV sensor<a class="headerlink" href="#ov5640-yuv-sensor" title="Permalink to this headline">¶</a></h3>
+<p><strong>OV5640 CSI camera module</strong> is a 2MP sensor with built-in ISP which can
+transmit raw YUYV frames over CSI lanes. This camera module can be ordered from
+<a class="reference external" href="https://www.leopardimaging.com/product/cmos-sensor-modules/mipi-camera-modules/li-am65x-csi2">https://www.leopardimaging.com/product/cmos-sensor-modules/mipi-camera-modules/li-am65x-csi2</a>.
+The camera can be connected to the bottom side of the Edge AI SK board as
+shown below.
+The OV5640 camera module requires an additional power supply with following
+requirements</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Output Voltage: 5 VDC</p></li>
+<li><p>Output Current: 2.0 A</p></li>
+</ul>
+</div></blockquote>
+<p>For added flexibility you can order a Samtec extender cable from here,
+<a class="reference external" href="https://www.samtec.com/products/hqcd">https://www.samtec.com/products/hqcd</a></p>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/csi_camera_connection.png"><img alt="_images/csi_camera_connection.png" src="_images/csi_camera_connection.png" style="width: 368.0px; height: 250.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">OV5640 CSI based YUV sensor connection with TDA4VM Starter Kit for Edge AI</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default OV5640 is disabled for TDA4VM SK. After connecting the
+camera you can enable it by specifying the dtb overlay file in
+<code class="docutils literal notranslate"><span class="pre">/run/media/mmcblk0p1/uenv.txt</span></code> as below,</p>
+<p><code class="docutils literal notranslate"><span class="pre">name_overlays=k3-j721e-edgeai-apps.dtbo</span> <span class="pre">k3-j721e-sk-csi2-ov5640.dtbo</span></code></p>
+<p>Reboot the board after editing and saving the file.</p>
+</div>
+</div>
+<div class="section" id="rpiv2-imx219-raw-sensor">
+<span id="pub-edgeai-imx219-sensor"></span><h3>RPiV2(IMX219) Raw sensor<a class="headerlink" href="#rpiv2-imx219-raw-sensor" title="Permalink to this headline">¶</a></h3>
+<p><strong>RPiV2 camera module</strong> is supported by TDA4VM SK. It is a 8MP sensor
+with no ISP, which can transmit raw SRGGB8 frames over CSI lanes at 1080p 60 fps.
+This camera module can be ordered from
+<a class="reference external" href="https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS">https://www.amazon.com/Raspberry-Pi-Camera-Module-Megapixel/dp/B01ER2SKFS</a>
+The camera can be connected to any of the 2 RPi headers on Edge AI SK board as
+shown below</p>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/rpi_camera_connection.png"><img alt="_images/rpi_camera_connection.png" src="_images/rpi_camera_connection.png" style="width: 477.6px; height: 310.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 7 </span><span class="caption-text">IMX219 CSI sensor connection with TDA4VM Starter Kit for Edge AI</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+<p>Note that the headers have to be lifted up to connect the cameras</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default IMX219 is disabled. After connecting the camera you can enable it
+by specifying the dtb overlay file in
+<code class="docutils literal notranslate"><span class="pre">/run/media/mmcblk0p1/uenv.txt</span></code> as below,</p>
+<p><code class="docutils literal notranslate"><span class="pre">name_overlays=k3-j721e-edgeai-apps.dtbo</span> <span class="pre">k3-j721e-sk-rpi-cam-imx219.dtbo</span></code></p>
+<p>Reboot the board after editing and saving the file.</p>
+</div>
+<p>Two RPi cameras can be connected to 2 headers for multi camera usecases</p>
+<p>Please refer <a class="reference internal" href="configuration_file.html#pub-edgeai-camera-sources"><span class="std std-ref">Camera sources (v4l2)</span></a> to know how to list all the cameras
+connected and select which one to use for the demo.</p>
+<p>By default imx219 will be configured to capture at 8 bit, but it also supports
+10 bit capture in 16 bit container. To use it in 10 bit mode, below steps are
+required:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Modify the <code class="docutils literal notranslate"><span class="pre">/opt/edge_ai_apps/scripts/setup_cameras.sh</span></code> to set the
+format to 10 bit like below</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">CSI_CAM_0_FMT</span><span class="o">=</span><span class="s1">&#39;[fmt:SRGGB8_1X10/1920x1080]&#39;</span>
+<span class="nv">CSI_CAM_1_FMT</span><span class="o">=</span><span class="s1">&#39;[fmt:SRGGB8_1X10/1920x1080]&#39;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Change the imaging binaries to use 10 bit versions</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv /opt/imaging/imx219/dcc_2a.bin /opt/imaging/imx219/dcc_2a_8b.bin
+mv /opt/imaging/imx219/dcc_viss.bin /opt/imaging/imx219/dcc_viss_8b.bin
+mv /opt/imaging/imx219/dcc_2a_10b.bin /opt/imaging/imx219/dcc_2a.bin
+mv /opt/imaging/imx219/dcc_viss_10b.bin /opt/imaging/imx219/dcc_viss.bin
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Set the input format in the <code class="docutils literal notranslate"><span class="pre">/opt/edge_ai_apps/configs/rpiV2_cam_example.yaml</span></code>
+as <code class="docutils literal notranslate"><span class="pre">rggb10</span></code></p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="imx390-raw-sensor">
+<span id="pub-edgeai-imx390-sensor"></span><h3>IMX390 Raw sensor<a class="headerlink" href="#imx390-raw-sensor" title="Permalink to this headline">¶</a></h3>
+<p><strong>IMX390 camera</strong> is supported by TDA4VM SK. It is a 8MP sensor
+with no ISP and fisheye lens, which can transmit raw SRGGB12 frames over
+CSI lanes at 1080p 60 fps.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>By default IMX390 is disabled. After connecting the camera you can enable it
+by specifying the dtb overlay file in
+<code class="docutils literal notranslate"><span class="pre">/run/media/mmcblk0p1/uenv.txt</span></code> as below,</p>
+<p><code class="docutils literal notranslate"><span class="pre">name_overlays=k3-j721e-edgeai-apps.dtbo</span> <span class="pre">k3-j721e-sk-fpdlink-fusion.dtbo</span> <span class="pre">k3-j721e-cpb-fpdlink-imx390-&lt;version&gt;-&lt;x&gt;-&lt;y&gt;.dtbo</span></code></p>
+<p>Variant of the camera: &lt;version&gt; = {cm, rcm}</p>
+<p>CSI lane the camera is connected to: &lt;x&gt; = {0, 1}</p>
+<p>Position on fusion board: &lt;y&gt; = {0, 1, 2, 3}</p>
+<p>Multiple cameras can be connected, with one dtbo entry for each camera. Reboot the board after editing and saving the file.</p>
+</div>
+<p>8 IMX390 cameras can be connected to through the fusion board for multi camera usecases</p>
+<p>Please refer <a class="reference internal" href="configuration_file.html#pub-edgeai-camera-sources"><span class="std std-ref">Camera sources (v4l2)</span></a> to know how to list all the cameras
+connected and select which one to use for the demo.</p>
+</div>
+</div>
+<div class="section" id="software-setup">
+<h2>Software setup<a class="headerlink" href="#software-setup" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="preparing-sd-card-image">
+<span id="pub-edgeai-prepare-sd-card"></span><h3>Preparing SD card image<a class="headerlink" href="#preparing-sd-card-image" title="Permalink to this headline">¶</a></h3>
+<p>Download the <cite>ti-processor-sdk-linux-sk-tda4vm-etcher-image.zip</cite> image and
+flash it to SD card using Balena etcher tool available at:</p>
+<p><a class="reference external" href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We have tested with Balena Etcher version 1.7.0 which can be found here,
+<a class="reference external" href="https://github.com/balena-io/etcher/releases/tag/v1.7.0">https://github.com/balena-io/etcher/releases/tag/v1.7.0</a></p>
+<p>There seem to be a known-issue with latest 1.7.2 version of Balena Etcher
+<a class="reference external" href="https://forums.balena.io/t/etcher-error-message-cannot-read-property-message-of-null/350471">https://forums.balena.io/t/etcher-error-message-cannot-read-property-message-of-null/350471</a></p>
+</div>
+<p>The tool can be installed either on Windows/Linux. Just download the
+etcher image and follow the instructions to prepare the SD card.</p>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/balena_etcher.png"><img alt="_images/balena_etcher.png" src="_images/balena_etcher.png" style="width: 804.0px; height: 513.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 8 </span><span class="caption-text">Balena Etcher tool to flash SD card with Processor SDK Linux for Edge AI</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+<p>The etcher image is created for 16 GB SD cards, if you are using larger SD card,
+it is possible to expand the root filesystem to use the full SD card capacity
+using below steps</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#find the SD card device entry using lsblk (Eg: /dev/sdc)</span>
+<span class="c1">#use the following commands to expand the filesystem</span>
+<span class="c1">#Make sure you have write permission to SD card or run the commands as root</span>
+
+<span class="c1">#Unmount the BOOT and rootfs partition before using parted tool</span>
+umount /dev/sdX1
+umount /dev/sdX2
+
+<span class="c1">#Use parted tool to resize the rootfs partition to use</span>
+<span class="c1">#the entire remaining space on the SD card</span>
+<span class="c1">#You might require sudo permissions to execute these steps</span>
+parted -s /dev/sdX resizepart <span class="m">2</span> <span class="s1">&#39;100%&#39;</span>
+e2fsck -f /dev/sdX2
+resize2fs /dev/sdX2
+
+<span class="c1">#replace /dev/sdX in above commands with SD card device entry</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="power-on-and-boot">
+<span id="pub-edgeai-poweron-boot"></span><h3>Power ON and Boot<a class="headerlink" href="#power-on-and-boot" title="Permalink to this headline">¶</a></h3>
+<p>Ensure that the power supply is disconnected before inserting the SD card.
+Once the SD card is firmly inserted in its slot and the board is powered ON,
+the board will take less than 20sec to boot and display a wallpaper as
+shown in the image below.</p>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="_images/boot_wallpaper.jpg"><img alt="_images/boot_wallpaper.jpg" src="_images/boot_wallpaper.jpg" style="width: 1008.0px; height: 756.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 9 </span><span class="caption-text">TDA4VM Starter Kit wallpaper upon boot</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+<p>You can also view the boot log by connecting the UART cable to your PC and
+use a serial port communications program.</p>
+<p>For <strong>Linux OS minicom</strong> works well.
+Please refer to the below documentation on ‘minicom’ for more details.</p>
+<p><a class="reference external" href="https://help.ubuntu.com/community/Minicom">https://help.ubuntu.com/community/Minicom</a></p>
+<p>When starting minicom, turn on the colors options like below:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo minicom -D /dev/ttyUSB2 -c on
+</pre></div>
+</div>
+<p>For <strong>Windows OS Tera Term</strong> works well.
+Please refer to the below documentation on ‘TeraTerm’ for more details</p>
+<p><a class="reference external" href="https://learn.sparkfun.com/tutorials/terminal-basics/tera-term-windows">https://learn.sparkfun.com/tutorials/terminal-basics/tera-term-windows</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Baud rate should be configured to 115200 bps in serial port communication
+program. You may not see any log in the UART console if you connect to it
+after the booting is complete or login prompt may get lost in between boot
+logs, press ENTER to get login prompt</p>
+</div>
+<p>As part of the linux systemd <code class="docutils literal notranslate"><span class="pre">/opt/edge_ai_apps/init_script.sh</span></code> is executed
+which does the below,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>This kills weston compositor which holds the display pipe. This step will
+make the wallpaper showing on the display disappear and come back</p></li>
+<li><p>The display pipe can now be used by ‘kmssink’ GStreamer element while
+running the demo applications.</p></li>
+<li><p>The script can also be used to setup proxies if connected behind a
+firewall.</p></li>
+</ul>
+</div></blockquote>
+<p>Once Linux boots login as <code class="docutils literal notranslate"><span class="pre">root</span></code> user with no password.</p>
+</div>
+<div class="section" id="connect-remotely">
+<span id="pub-edgeai-connecting-remotely"></span><h3>Connect remotely<a class="headerlink" href="#connect-remotely" title="Permalink to this headline">¶</a></h3>
+<p>If you don’t prefer the UART console, you can also access the device with the
+IP address that is shown on the display.</p>
+<p>With the IP address one can ssh directly to the board, view the contents and run
+the demos.</p>
+<p>For best experience we recommend using VSCode which can be downloaded from
+here.</p>
+<p><a class="reference external" href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a></p>
+<p>You also require the “Remote development extension pack” installed in VSCode
+as mentioned here:</p>
+<p><a class="reference external" href="https://code.visualstudio.com/docs/remote/ssh">https://code.visualstudio.com/docs/remote/ssh</a></p>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="_images/vs_code.png"><img alt="_images/vs_code.png" src="_images/vs_code.png" style="width: 1201.5px; height: 708.3000000000001px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 10 </span><span class="caption-text">Microsoft Visual Studio Code for connecting to TDA4VM Starter Kit for Edge AI via SSH</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="installing-dependencies">
+<span id="pub-edgeai-install-dependencies"></span><h3>Installing Dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>On a fresh install, you need to first run <code class="docutils literal notranslate"><span class="pre">setup_script.sh</span></code> as below,</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps#./setup_script.sh
+</pre></div>
+</div>
+<p>This takes care of installing all the dependencies required to run the demo
+applications,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Clone Tensorflow repo and dependencies to get header files required to
+build C++ applications</p></li>
+<li><p>Clone ONNX-RT repo and dependencies to get header files required to
+build C++ applications</p></li>
+<li><p>Clone the edgeai-tiovx-modules repo, build and install the modules
+library.</p></li>
+<li><p>Clone the edgeai-gst-plugins repo, build and install the custom
+GStreamer plugins.</p></li>
+<li><p>Clone the edgeai-tidl-tools repo for running standalone inference
+examples and Jupyter notebooks</p></li>
+<li><p>Compile the C++ apps under apps_cpp folder</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Without installing these dependencies, the Python and C++ demos under
+edge_ai_apps will not run.</strong></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><p>We can run the setup_script.sh multiple times. The script checks for
+what is already downloaded and then executes the next steps like build
+and install if applicable.</p></li>
+<li><p>If the scripts are executed on Yocto Linux then we need to re-run the
+setup_script.sh when switching to a Docker session. This is because of
+the differences between GLIB version in Yocto Linux and Ubuntu 20.04
+Docker image.</p></li>
+<li><p>The same applies when switching from Docker back to Yocto Linux. The
+setup_script.sh must be run once before running any other applications
+or demos.</p></li>
+<li><p>Debug option can be passed to setup_script.sh as shown below to build
+apps, modules and plugins in debug mode</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps#./setup_script.sh -d
+</pre></div>
+</div>
+</li>
+<li><p>By default /opt directory is used for downloading and installing the
+dependencies. A different installation directory can be provided as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps#./setup_script.sh -i /absolute/path/to/directory
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In case you are behind VPN, the script will not work since proxy is not
+handled for tools like git and wget. As a workaround the script can be
+executed in a docker container. Please refer to <a class="reference internal" href="docker_environment.html#pub-edgeai-docker-env"><span class="std std-ref">Docker Environment</span></a>
+for building and running a docker container. Alternatively you can mount the
+SD card on a linux PC and run the script, make sure you have write permission
+to the SD card.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="running_simple_demos.html" class="btn btn-neutral float-right" title="Running Simple demos" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="sdk_overview.html" class="btn btn-neutral" title="Processor SDK Linux for Edge AI" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

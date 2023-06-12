@@ -1,0 +1,638 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data Flows &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="Performance Visualization Tool" href="performance_visualizer.html"/>
+        <link rel="prev" title="Docker Environment" href="docker_environment.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data Flows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#image-classification">Image classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#object-detection">Object Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#semantic-segmentation">Semantic Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#human-pose-estimation">Human Pose Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#video-source">Video source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rtsp-source">RTSP source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rpiv2-camera-sensor-imx219">RPiV2 Camera Sensor (IMX219)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imx390-camera-sensor">IMX390 Camera Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#video-output">Video output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#single-input-multi-inference">Single Input Multi inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#multi-input-multi-inference">Multi Input Multi inference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Data Flows</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-flows">
+<span id="pub-data-flows"></span><h1>Data Flows<a class="headerlink" href="#data-flows" title="Permalink to this headline">¶</a></h1>
+<p>The <strong>app_edgeai</strong> application at a high level can be split into 3 parts,</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Input pipeline - Grabs a frame from camera, video, image or RTSP source</p></li>
+<li><p>Output pipeline - Sends the output to display or a file</p></li>
+<li><p>Compute pipeline - Performs pre-processing, inference and post-processing</p></li>
+</ul>
+</div></blockquote>
+<p>Here are the data flows for each reference demo and the corresponding GStreamer
+launch strings that <strong>app_edgeai</strong> application generates. User can interact with
+the application via the <a class="reference internal" href="configuration_file.html#pub-edgeai-configuration"><span class="std std-ref">Demo Configuration file</span></a></p>
+<div class="section" id="image-classification">
+<span id="pub-edgeai-image-classification-data-flow"></span><h2>Image classification<a class="headerlink" href="#image-classification" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a frame is grabbed from an input source and split into two paths.
+The “analytics” path resizes the input maintaining the aspect ratio and crops
+the input to match the resolution required to run the deep learning network.
+The “visualization” path is provided to the post-processing module which
+overlays the detected classes. Post-processed output is given to HW mosaic plugin
+which positions and resizes the output window on an empty background before
+sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video18 io-mode<span class="o">=</span><span class="m">2</span> ! image/jpeg, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! jpegdec ! tiovxdlcolorconvert ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">454</span>, <span class="nv">height</span><span class="o">=</span><span class="m">256</span> ! tiovxdlcolorconvert out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! videobox <span class="nv">left</span><span class="o">=</span><span class="m">115</span> <span class="nv">right</span><span class="o">=</span><span class="m">115</span> <span class="nv">top</span><span class="o">=</span><span class="m">16</span> <span class="nv">bottom</span><span class="o">=</span><span class="m">16</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">0</span> mean-0<span class="o">=</span><span class="m">123</span>.675000 mean-1<span class="o">=</span><span class="m">116</span>.280000 mean-2<span class="o">=</span><span class="m">103</span>.530000 scale-0<span class="o">=</span><span class="m">0</span>.017125 scale-1<span class="o">=</span><span class="m">0</span>.017507 scale-2<span class="o">=</span><span class="m">0</span>.017429 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/edgeai_image_classification.png"><img alt="_images/edgeai_image_classification.png" src="_images/edgeai_image_classification.png" style="width: 1005.0px; height: 515.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 14 </span><span class="caption-text">GStreamer based data-flow pipeline for image classification demo with USB camera and display</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="object-detection">
+<span id="pub-edgeai-object-detection-data-flow"></span><h2>Object Detection<a class="headerlink" href="#object-detection" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a frame is grabbed from an input source and split into two paths.
+The “analytics” path resizes the input to match the resolution required to run
+the deep learning network. The “visualization” path is provided to the
+post-processing module which overlays rectangles around detected objects.
+Post-processed output is given to HW mosaic plugin which positions and resizes
+the output window on an empty background before sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video18 io-mode<span class="o">=</span><span class="m">2</span> ! image/jpeg, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! jpegdec ! tiovxdlcolorconvert ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">320</span>, <span class="nv">height</span><span class="o">=</span><span class="m">320</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="_images/edgeai_object_detection.png"><img alt="_images/edgeai_object_detection.png" src="_images/edgeai_object_detection.png" style="width: 982.8px; height: 514.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 15 </span><span class="caption-text">GStreamer based data-flow pipeline for object detection demo with USB camera and display</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="semantic-segmentation">
+<span id="pub-edgeai-semantic-segmentation-data-flow"></span><h2>Semantic Segmentation<a class="headerlink" href="#semantic-segmentation" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a frame is grabbed from an input source and split into two paths.
+The “analytics” path resize the input to match the resolution required to run
+the deep learning network. The “visualization” path is provided to the
+post-processing module which blends each segmented pixel to a color map.
+Post-processed output is given to HW mosaic plugin which positions and resizes
+the output window on an empty background before sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video18 io-mode<span class="o">=</span><span class="m">2</span> ! image/jpeg, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! jpegdec ! tiovxdlcolorconvert ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">512</span>, <span class="nv">height</span><span class="o">=</span><span class="m">512</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">0</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.015625 scale-1<span class="o">=</span><span class="m">0</span>.015625 scale-2<span class="o">=</span><span class="m">0</span>.015625 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id3">
+<a class="reference internal image-reference" href="_images/edgeai_semantic_segmentation.png"><img alt="_images/edgeai_semantic_segmentation.png" src="_images/edgeai_semantic_segmentation.png" style="width: 985.1999999999999px; height: 514.8px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 16 </span><span class="caption-text">GStreamer based data-flow pipeline for semantic segmentation demo with USB camera and display</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="human-pose-estimation">
+<span id="pub-edgeai-human-pose-estimation-data-flow"></span><h2>Human Pose Estimation<a class="headerlink" href="#human-pose-estimation" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a frame is grabbed from an input source and split into two paths.
+The “analytics” path resize the input to match the resolution required to run
+the deep learning network. The “visualization” path is provided to the
+post-processing module which overlays the keypoints and lines to draw the pose.
+Post-processed output is given to HW mosaic plugin which positions and resizes
+the output window on an empty background before sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video2 io-mode<span class="o">=</span><span class="m">2</span> ! image/jpeg, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! jpegdec ! tiovxdlcolorconvert ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">640</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> <span class="nv">target</span><span class="o">=</span><span class="m">0</span> channel-order<span class="o">=</span><span class="m">0</span> mean-0<span class="o">=</span><span class="m">0</span>.000000 mean-1<span class="o">=</span><span class="m">0</span>.000000 mean-2<span class="o">=</span><span class="m">0</span>.000000 scale-0<span class="o">=</span><span class="m">1</span>.000000 scale-1<span class="o">=</span><span class="m">1</span>.000000 scale-2<span class="o">=</span><span class="m">1</span>.000000 tensor-format<span class="o">=</span>bgr out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+GStreamer output pipeline:
+</pre></div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0 <span class="nv">background</span><span class="o">=</span>/tmp/background_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id4">
+<a class="reference internal image-reference" href="_images/edgeai_human_pose.png"><img alt="_images/edgeai_human_pose.png" src="_images/edgeai_human_pose.png" style="width: 921.5999999999999px; height: 518.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">GStreamer based data-flow pipeline for Human Pose Estimation demo with USB camera and display</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="video-source">
+<span id="pub-edgeai-video-source-data-flow"></span><h2>Video source<a class="headerlink" href="#video-source" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a video file is read from a known location and passed to a
+de-muxer to extract audio and video streams, the video stream is parsed
+and raw encoded information is passed to a HW video decoder. Note that H.264 and
+H.265 encoded videos are supported, making use of the respective HW decoders.
+The resulting output is split into two paths. The “analytics” path resizes the
+input to match the resolution required to run the deep learning network. The
+“visualization” path is provided to the post-processing module which does the
+required post process required by the model. Post-processed output is given to
+HW mosaic plugin which positions and resizes the output window on an empty
+background before sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>filesrc <span class="nv">location</span><span class="o">=</span>/opt/edge_ai_apps/data/videos/video_0000_h264.mp4 ! qtdemux ! h264parse ! v4l2h264dec ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12  ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">320</span>, <span class="nv">height</span><span class="o">=</span><span class="m">320</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id5">
+<a class="reference internal image-reference" href="_images/edgeai_video_source.png"><img alt="_images/edgeai_video_source.png" src="_images/edgeai_video_source.png" style="width: 973.8px; height: 502.79999999999995px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">GStreamer based data-flow pipeline with video file input source and display</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="rtsp-source">
+<span id="pub-edgeai-rtsp-source-data-flow"></span><h2>RTSP source<a class="headerlink" href="#rtsp-source" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a video file is read from a RTSP source and passed to a
+de-muxer to extract audio and video streams, the video stream is parsed
+and raw encoded information is passed to a video decoder and the resulting
+output is split into two paths. The “analytics” path resizes the input to match
+the resolution required to run the deep learning network. The “visualization”
+path is provided to the post-processing module which does the required post
+process required by the model. Post-processed output is given to HW mosaic plugin
+which positions and resizes the output window on an empty background before
+sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rtspsrc <span class="nv">location</span><span class="o">=</span>rtsp://172.24.145.220:8554/test <span class="nv">latency</span><span class="o">=</span><span class="m">0</span> buffer-mode<span class="o">=</span>auto ! rtph264depay ! h264parse ! v4l2h264dec ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 !tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">320</span>, <span class="nv">height</span><span class="o">=</span><span class="m">320</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id6">
+<a class="reference internal image-reference" href="_images/edgeai_rtsp_source.png"><img alt="_images/edgeai_rtsp_source.png" src="_images/edgeai_rtsp_source.png" style="width: 974.4px; height: 509.4px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 19 </span><span class="caption-text">GStreamer based data-flow pipeline with RTSP based video file source and display</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="rpiv2-camera-sensor-imx219">
+<span id="pub-edgeai-rpi-camera-data-flow"></span><h2>RPiV2 Camera Sensor (IMX219)<a class="headerlink" href="#rpiv2-camera-sensor-imx219" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, raw frames in SRGGB8 format are captured form RPiV2 (imx219)
+camera sensor. VISS (Vision Imaging Subsystem) is used to process the raw frames
+and get the output in NV12, VISS also cotrols the sensor parameters like
+exposure, gain etc.. via v4l2 ioctls. The NV12 output is split into two paths.
+The “analytics” path resizes the input to match the resolution required to run
+the deep learning network. The “visualization” path is provided to the
+post-processing module which does the required post process required by the
+model. Post-processed output is given to HW mosaic plugin which positions and
+resizes the output window on an empty background before sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video2 io-mode<span class="o">=</span><span class="m">5</span> ! video/x-bayer, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span>, <span class="nv">format</span><span class="o">=</span>rggb ! tiovxisp <span class="nv">device</span><span class="o">=</span>/dev/v4l-subdev2 dcc-isp-file<span class="o">=</span>/opt/imaging/imx219/dcc_viss.bin dcc-2a-file<span class="o">=</span>/opt/imaging/imx219/dcc_2a.bin format-msb<span class="o">=</span><span class="m">7</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tiovxmultiscaler ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">320</span>, <span class="nv">height</span><span class="o">=</span><span class="m">320</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id7">
+<a class="reference internal image-reference" href="_images/edgeai_rpi_camera_source.png"><img alt="_images/edgeai_rpi_camera_source.png" src="_images/edgeai_rpi_camera_source.png" style="width: 970.8px; height: 517.1999999999999px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 20 </span><span class="caption-text">GStreamer based data-flow pipeline with IMX219 sensor, ISP and display</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="imx390-camera-sensor">
+<span id="pub-edgeai-imx390-camera-data-flow"></span><h2>IMX390 Camera Sensor<a class="headerlink" href="#imx390-camera-sensor" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, raw frames in SRGGB12 format are captured from IMX390 camera
+sensor. VISS (Vision Imaging Subsystem) is used to process the raw frames
+and get the output in NV12, VISS also controls the sensor parameters like
+exposure, gain etc.. via v4l2 ioctls. This is followed by LDC (Lens Distortion
+Correction) required due to the fisheye lens. The NV12 output is split into two paths.
+The “analytics” path resizes the input to match the resolution required to run
+the deep learning network. The “visualization” path is provided to the
+post-processing module which does the required post process required by the
+model. Post-processed output is given to HW mosaic plugin which positions and
+resizes the output window on an empty background before sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video18 ! queue <span class="nv">leaky</span><span class="o">=</span><span class="m">2</span> ! video/x-bayer, <span class="nv">width</span><span class="o">=</span><span class="m">1936</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1100</span>, <span class="nv">format</span><span class="o">=</span>rggb12 ! tiovxisp sink_0::device<span class="o">=</span>/dev/v4l-subdev7 sensor-name<span class="o">=</span>IMX390-UB953_D3 dcc-isp-file<span class="o">=</span>/opt/imaging/imx390/dcc_viss.bin sink_0::dcc-2a-file<span class="o">=</span>/opt/imaging/imx390/dcc_2a.bin format-msb<span class="o">=</span><span class="m">11</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tiovxldc dcc-file<span class="o">=</span>/opt/imaging/imx390/dcc_ldc.bin sensor-name<span class="o">=</span>IMX390-UB953_D3 ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> !tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">512</span>, <span class="nv">height</span><span class="o">=</span><span class="m">512</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">3</span> <span class="nv">target</span><span class="o">=</span><span class="m">0</span> channel-order<span class="o">=</span><span class="m">0</span> tensor-format<span class="o">=</span>bgr out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0 <span class="nv">background</span><span class="o">=</span>/tmp/background_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+<div class="figure align-center" id="id8">
+<a class="reference internal image-reference" href="_images/edgeai_imx390_camera_source.png"><img alt="_images/edgeai_imx390_camera_source.png" src="_images/edgeai_imx390_camera_source.png" style="width: 1094.3999999999999px; height: 594.6px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 21 </span><span class="caption-text">GStreamer based data-flow pipeline with IMX390 sensor, ISP, LDC and display</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="video-output">
+<span id="pub-edgeai-video-output-data-flow"></span><h2>Video output<a class="headerlink" href="#video-output" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a frame is grabbed from an input source and split into two paths.
+The “analytics” path resizes the input to match the resolution required to run
+the deep learning network. The “visualization” path is provided to the
+post-processing module which does the required post process required by the
+model. Post-processed output is given to HW mosaic plugin which positions and
+resizes the output window on an empty background. Finally the video is encoded
+using the H.264 HW encoder and written to a video file.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video18 io-mode<span class="o">=</span><span class="m">2</span> ! image/jpeg, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! jpegdec ! tiovxdlcolorconvert ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">320</span>, <span class="nv">height</span><span class="o">=</span><span class="m">320</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">1280</span>   sink_0::height<span class="o">=</span><span class="m">720</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! v4l2h264enc <span class="nv">bitrate</span><span class="o">=</span><span class="m">10000000</span> ! h264parse ! matroskamux !  filesink <span class="nv">location</span><span class="o">=</span>/opt/edge_ai_apps/data/output/videos/output_video.mkv
+</pre></div>
+</div>
+<div class="figure align-center" id="id9">
+<a class="reference internal image-reference" href="_images/edgeai_video_output.png"><img alt="_images/edgeai_video_output.png" src="_images/edgeai_video_output.png" style="width: 985.1999999999999px; height: 517.1999999999999px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 22 </span><span class="caption-text">GStreamer based data-flow pipeline with video file input source and display</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="single-input-multi-inference">
+<span id="pub-edgeai-single-input-multi-inference-data-flow"></span><h2>Single Input Multi inference<a class="headerlink" href="#single-input-multi-inference" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a frame is grabbed from an input source and split into multiple
+paths. Each path is further split into two sub-paths one for analytics and
+another for visualization. Each path can run any type of network, image
+classification, object detection, semantic segmentation and using any
+supported run-time.</p>
+<p>For example the below GStreamer pipeline splits the input into 4 paths for
+running 4 deep learning networks. First is a semantic segmentation network,
+followed by object detection network, followed by two image classification
+networks. If we look at the image classification path, the analytics sub-path
+resizes the input to maintain the aspect ratio and crops the input to match
+the resolution required to run the deep learning network. The visualization
+sub-path is provided to the post-processing module which overlays the detected
+classes. Post-processed output from all the 4 paths is given to HW mosaic plugin
+which positions and resizes the output windows on an empty background before
+sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video18 io-mode<span class="o">=</span><span class="m">2</span> ! image/jpeg, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! jpegdec ! tiovxdlcolorconvert ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tee <span class="nv">name</span><span class="o">=</span>tee_split0
+tee_split0. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+tee_split0. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_02
+tee_split0. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_03
+tee_split0. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_04
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">512</span>, <span class="nv">height</span><span class="o">=</span><span class="m">512</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">0</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.015625 scale-1<span class="o">=</span><span class="m">0</span>.015625 scale-2<span class="o">=</span><span class="m">0</span>.015625 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_02. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">320</span>, <span class="nv">height</span><span class="o">=</span><span class="m">320</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_1 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_02. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_1 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_03. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">454</span>, <span class="nv">height</span><span class="o">=</span><span class="m">256</span> ! tiovxdlcolorconvert out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! videobox <span class="nv">left</span><span class="o">=</span><span class="m">115</span> <span class="nv">right</span><span class="o">=</span><span class="m">115</span> <span class="nv">top</span><span class="o">=</span><span class="m">16</span> <span class="nv">bottom</span><span class="o">=</span><span class="m">16</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_2 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_03. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_2 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_04. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">454</span>, <span class="nv">height</span><span class="o">=</span><span class="m">256</span> ! tiovxdlcolorconvert out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! videobox <span class="nv">left</span><span class="o">=</span><span class="m">115</span> <span class="nv">right</span><span class="o">=</span><span class="m">115</span> <span class="nv">top</span><span class="o">=</span><span class="m">16</span> <span class="nv">bottom</span><span class="o">=</span><span class="m">16</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">0</span> mean-0<span class="o">=</span><span class="m">123</span>.675000 mean-1<span class="o">=</span><span class="m">116</span>.280000 mean-2<span class="o">=</span><span class="m">103</span>.530000 scale-0<span class="o">=</span><span class="m">0</span>.017125 scale-1<span class="o">=</span><span class="m">0</span>.017507 scale-2<span class="o">=</span><span class="m">0</span>.017429 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_3 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_04. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_3 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_1 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_1
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_2 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_2
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_3 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_3
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">640</span>   sink_0::height<span class="o">=</span><span class="m">360</span>
+sink_1::startx<span class="o">=</span><span class="m">960</span>  sink_1::starty<span class="o">=</span><span class="m">180</span>  sink_1::width<span class="o">=</span><span class="m">640</span>   sink_1::height<span class="o">=</span><span class="m">360</span>
+sink_2::startx<span class="o">=</span><span class="m">320</span>  sink_2::starty<span class="o">=</span><span class="m">560</span>  sink_2::width<span class="o">=</span><span class="m">640</span>   sink_2::height<span class="o">=</span><span class="m">360</span>
+sink_3::startx<span class="o">=</span><span class="m">960</span>  sink_3::starty<span class="o">=</span><span class="m">560</span>  sink_3::width<span class="o">=</span><span class="m">640</span>   sink_3::height<span class="o">=</span><span class="m">360</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+</div>
+<div class="section" id="multi-input-multi-inference">
+<span id="pub-edgeai-multi-input-multi-inference-data-flow"></span><h2>Multi Input Multi inference<a class="headerlink" href="#multi-input-multi-inference" title="Permalink to this headline">¶</a></h2>
+<p>In this demo, a frame is grabbed from multiple input sources and split into
+multiple paths. The multiple input sources could be either multiple cameras or
+a combination of camera, video, image, RTSP source. Each path is further split
+into two sub-paths one for analytics and another for visualization. Each path
+can run any type of network, image classification, object detection,
+semantic segmentation and using any supported run-time.</p>
+<p>For example the below GStreamer pipeline splits two inputs into 4 paths for
+running 2 deep learning networks. First is a object detection network, followed by
+image classification networks. If we look at the image classification path,
+the analytics sub-path resizes the input to maintain the aspect ratio and crops
+the input to match the resolution required to run the deep learning network.
+The visualization sub-path is provided to the post-processing module which
+overlays the detected classes. Post-processed output from all the 4 paths is
+given to HW mosaic plugin which positions and resizes the output windows on an
+empty background before sending to display.</p>
+<p>GStreamer input pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>v4l2src <span class="nv">device</span><span class="o">=</span>/dev/video18 io-mode<span class="o">=</span><span class="m">2</span> ! image/jpeg, <span class="nv">width</span><span class="o">=</span><span class="m">1280</span>, <span class="nv">height</span><span class="o">=</span><span class="m">720</span> ! jpegdec ! tiovxdlcolorconvert ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12 ! tee <span class="nv">name</span><span class="o">=</span>tee_split0
+tee_split0. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_01
+tee_split0. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_02
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">320</span>, <span class="nv">height</span><span class="o">=</span><span class="m">320</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_01. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_0 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_02. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">454</span>, <span class="nv">height</span><span class="o">=</span><span class="m">256</span> ! tiovxdlcolorconvert out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! videobox <span class="nv">left</span><span class="o">=</span><span class="m">115</span> <span class="nv">right</span><span class="o">=</span><span class="m">115</span> <span class="nv">top</span><span class="o">=</span><span class="m">16</span> <span class="nv">bottom</span><span class="o">=</span><span class="m">16</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">1</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.007812 scale-1<span class="o">=</span><span class="m">0</span>.007812 scale-2<span class="o">=</span><span class="m">0</span>.007812 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_1 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_02. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_1 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+
+filesrc <span class="nv">location</span><span class="o">=</span>/opt/edge_ai_apps/data/videos/video_0000_h264.mp4 ! qtdemux ! h264parse ! v4l2h264dec ! video/x-raw, <span class="nv">format</span><span class="o">=</span>NV12  ! tee <span class="nv">name</span><span class="o">=</span>tee_split1
+tee_split1. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_11
+tee_split1. ! queue ! tiovxmultiscaler <span class="nv">name</span><span class="o">=</span>split_12
+split_11. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">512</span>, <span class="nv">height</span><span class="o">=</span><span class="m">512</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">0</span> mean-0<span class="o">=</span><span class="m">128</span>.000000 mean-1<span class="o">=</span><span class="m">128</span>.000000 mean-2<span class="o">=</span><span class="m">128</span>.000000 scale-0<span class="o">=</span><span class="m">0</span>.015625 scale-1<span class="o">=</span><span class="m">0</span>.015625 scale-2<span class="o">=</span><span class="m">0</span>.015625 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_2 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_11. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_2 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_12. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">454</span>, <span class="nv">height</span><span class="o">=</span><span class="m">256</span> ! tiovxdlcolorconvert out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! videobox <span class="nv">left</span><span class="o">=</span><span class="m">115</span> <span class="nv">right</span><span class="o">=</span><span class="m">115</span> <span class="nv">top</span><span class="o">=</span><span class="m">16</span> <span class="nv">bottom</span><span class="o">=</span><span class="m">16</span> ! tiovxdlpreproc data-type<span class="o">=</span><span class="m">10</span> channel-order<span class="o">=</span><span class="m">0</span> mean-0<span class="o">=</span><span class="m">123</span>.675000 mean-1<span class="o">=</span><span class="m">116</span>.280000 mean-2<span class="o">=</span><span class="m">103</span>.530000 scale-0<span class="o">=</span><span class="m">0</span>.017125 scale-1<span class="o">=</span><span class="m">0</span>.017507 scale-2<span class="o">=</span><span class="m">0</span>.017429 tensor-format<span class="o">=</span>rgb out-pool-size<span class="o">=</span><span class="m">4</span> ! application/x-tensor-tiovx ! appsink <span class="nv">name</span><span class="o">=</span>pre_3 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+split_12. ! queue ! video/x-raw, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! tiovxdlcolorconvert <span class="nv">target</span><span class="o">=</span><span class="m">1</span> out-pool-size<span class="o">=</span><span class="m">4</span> ! video/x-raw, <span class="nv">format</span><span class="o">=</span>RGB ! appsink <span class="nv">name</span><span class="o">=</span>sen_3 max-buffers<span class="o">=</span><span class="m">2</span> <span class="nv">drop</span><span class="o">=</span><span class="nb">true</span>
+</pre></div>
+</div>
+<p>GStreamer output pipeline:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_0
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_1 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_1
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_2 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_2
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME is-live<span class="o">=</span><span class="nb">true</span> <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> <span class="k">do</span>-timestamp<span class="o">=</span><span class="nb">true</span> <span class="nv">name</span><span class="o">=</span>post_3 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">640</span>, <span class="nv">height</span><span class="o">=</span><span class="m">360</span> ! queue ! mosaic_0.sink_3
+appsrc <span class="nv">format</span><span class="o">=</span>GST_FORMAT_TIME <span class="nv">block</span><span class="o">=</span><span class="nb">true</span> num-buffers<span class="o">=</span><span class="m">1</span> <span class="nv">name</span><span class="o">=</span>background_0 ! tiovxdlcolorconvert ! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! queue ! mosaic_0.background
+tiovxmosaic <span class="nv">name</span><span class="o">=</span>mosaic_0
+sink_0::startx<span class="o">=</span><span class="m">320</span>  sink_0::starty<span class="o">=</span><span class="m">180</span>  sink_0::width<span class="o">=</span><span class="m">640</span>   sink_0::height<span class="o">=</span><span class="m">360</span>
+sink_1::startx<span class="o">=</span><span class="m">960</span>  sink_1::starty<span class="o">=</span><span class="m">180</span>  sink_1::width<span class="o">=</span><span class="m">640</span>   sink_1::height<span class="o">=</span><span class="m">360</span>
+sink_2::startx<span class="o">=</span><span class="m">320</span>  sink_2::starty<span class="o">=</span><span class="m">560</span>  sink_2::width<span class="o">=</span><span class="m">640</span>   sink_2::height<span class="o">=</span><span class="m">360</span>
+sink_3::startx<span class="o">=</span><span class="m">960</span>  sink_3::starty<span class="o">=</span><span class="m">560</span>  sink_3::width<span class="o">=</span><span class="m">640</span>   sink_3::height<span class="o">=</span><span class="m">360</span>
+! video/x-raw,format<span class="o">=</span>NV12, <span class="nv">width</span><span class="o">=</span><span class="m">1920</span>, <span class="nv">height</span><span class="o">=</span><span class="m">1080</span> ! kmssink <span class="nv">sync</span><span class="o">=</span><span class="nb">false</span> driver-name<span class="o">=</span>tidss
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="performance_visualizer.html" class="btn btn-neutral float-right" title="Performance Visualization Tool" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="docker_environment.html" class="btn btn-neutral" title="Docker Environment" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

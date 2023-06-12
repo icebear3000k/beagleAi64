@@ -1,0 +1,63 @@
+{
+        // This allows to debug the applications from VScode directly
+        // Refer to documentation on exact steps to do this
+        "version": "0.2.0",
+        "configurations": [
+                ////////////////////////////////////////////////////////////////
+                // Python launch configurations
+                ////////////////////////////////////////////////////////////////
+                {
+                        "name": "EdgeAI Python demo",
+                        "type": "python",
+                        "request": "launch",
+                        "console": "integratedTerminal",
+                        "cwd": "${workspaceFolder}/apps_python",
+                        "environment": [
+                                {
+                                        "name": "GST_DEBUG",
+                                        "value": "1"
+                                }
+                        ],
+                        "program": "${workspaceFolder}/apps_python/app_edgeai.py",
+                        "args": [
+                                "-n",
+                                "-v",
+                                // Change this config file as required
+                                "${workspaceFolder}/configs/image_classification.yaml"
+                        ]
+                },
+                ////////////////////////////////////////////////////////////////
+                // C++ launch configurations
+                ////////////////////////////////////////////////////////////////
+                {
+                        "name": "EdgeAI C++ demo",
+                        "type": "cppdbg",
+                        "request": "launch",
+                        "externalConsole": false,
+                        "MIMode": "gdb",
+                        "miDebuggerPath": "/usr/bin/gdb",
+                        "stopAtEntry": false,
+                        "setupCommands": [
+                                {
+                                        "description": "Enable pretty-printing for gdb",
+                                        "text": "-enable-pretty-printing",
+                                        "ignoreFailures": true
+                                }
+                        ],
+                         "environment": [
+                                {
+                                        "name": "GST_DEBUG",
+                                        "value": "1"
+                                }
+                        ],
+                        "cwd": "${workspaceFolder}/apps_cpp/bin/Debug",
+                        "program": "${workspaceFolder}/apps_cpp/bin/Debug/app_edgeai",
+                        "args": [
+                                "-n",
+                                "-v",
+                                // Change this config file as required
+                                "${workspaceFolder}/configs/image_classification.yaml"
+                        ]
+               },
+        ]
+}

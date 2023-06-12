@@ -1,0 +1,366 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Processor SDK Linux for Edge AI &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="#"/>
+        <link rel="next" title="Processor SDK Linux for Edge AI" href="sdk_overview.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="#">Docs</a> &raquo;</li>
+      
+    <li>Processor SDK Linux for Edge AI</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="processor-sdk-linux-for-edge-ai">
+<h1>Processor SDK Linux for Edge AI<a class="headerlink" href="#processor-sdk-linux-for-edge-ai" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sdk_overview.html#overview">Overview</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#hardware-setup">Hardware setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getting_started.html#software-setup">Software setup</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="running_simple_demos.html#running-python-based-demo-applications">Running Python based demo applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running_simple_demos.html#building-and-running-c-based-demo-applications">Building and running C++ based demo applications</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inference_models.html#model-downloader-tool">Model Downloader Tool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="inference_models.html#import-custom-models">Import Custom Models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration_file.html#inputs">Inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration_file.html#models">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration_file.html#outputs">Outputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration_file.html#flows">Flows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="running_advance_demos.html#single-input-multi-inference-demo">Single input multi inference demo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="running_advance_demos.html#multi-input-multi-inference-demo">Multi input multi inference demo</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docker_environment.html#building-docker-image">Building Docker image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker_environment.html#running-the-docker-container">Running the Docker container</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker_environment.html#handling-proxy-settings">Handling proxy settings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker_environment.html#additional-docker-commands">Additional Docker commands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker_environment.html#relocating-docker-root-location">Relocating Docker Root Location</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#image-classification">Image classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#object-detection">Object Detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#semantic-segmentation">Semantic Segmentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#human-pose-estimation">Human Pose Estimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#video-source">Video source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#rtsp-source">RTSP source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#rpiv2-camera-sensor-imx219">RPiV2 Camera Sensor (IMX219)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#imx390-camera-sensor">IMX390 Camera Sensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#video-output">Video output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#single-input-multi-inference">Single Input Multi inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_flows.html#multi-input-multi-inference">Multi Input Multi inference</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="performance_visualizer.html#generating-performance-logs">Generating Performance Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="performance_visualizer.html#running-the-visualization-tool">Running the Visualization tool</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wifi_oob_demo.html">WiFi Out Of Box Demo - User Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pi_hdr_programming.html">RPi 40-pin header programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sdk_components.html#edge-ai-applications">Edge AI Applications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdk_components.html#processor-sdk-rtos">Processor SDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sdk_components.html#processor-sdk-linux">Processor SDK Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_08_02.html">Release notes version 08.02.00</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_08_01.html">Release notes version 08.01.00</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_08_00.html">Release notes version 08.00.01</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_00_05.html">Release notes version 00.05.00</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes_00_04.html">Release notes version 00.04.02</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="datasheet.html#source-usb-camera">Source             : <strong>USB Camera</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasheet.html#source-video">Source             : <strong>Video</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasheet.html#source-csi-camera-ov5640">Source             : <strong>CSI Camera (ov5640)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasheet.html#source-csi-camera-with-viss-imx219">Source             : <strong>CSI Camera with VISS (imx219)</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="datasheet.html#source-imx390-over-fpd-link">Source             : <strong>IMX390 over FPD-Link</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="test_report.html#demo-apps-test-report">Demo Apps test report</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="development_flow.html#getting-psdk-rtos">Getting PSDK RTOS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_flow.html#building-the-rtos-sdk-from-source">Building the RTOS SDK from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_flow.html#getting-psdk-linux">Getting PSDK LINUX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_flow.html#building-the-linux-sdk-from-source">Building the LINUX SDK from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_flow.html#applications-setup">Applications setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="development_flow.html#target-side-steps">Target side steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#edgeai-sdk-vs-processor-sdk">EdgeAI SDK vs Processor SDK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#getting-error-when-trying-to-capture-from-multiple-usb-cameras-simultaneously">Getting Error when trying to capture from multiple USB cameras simultaneously</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#processor-sdk-rtos-j721e-developer-notes">PROCESSOR-SDK-RTOS-J721E Developer notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html#processor-sdk-linux-j721e-how-to-guides">PROCESSOR-SDK-LINUX-J721E How to Guides</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="sdk_overview.html" class="btn btn-neutral float-right" title="Processor SDK Linux for Edge AI" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

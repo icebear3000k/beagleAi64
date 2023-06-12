@@ -1,0 +1,610 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Demo Configuration file &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="Running Advance demos" href="running_advance_demos.html"/>
+        <link rel="prev" title="DL models for Edge Inference" href="inference_models.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Demo Configuration file</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inputs">Inputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#camera-sources-v4l2">Camera sources (v4l2)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-sources">Video sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-sources">Image sources</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rtsp-sources">RTSP sources</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#models">Models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outputs">Outputs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#display-sink-kmssink">Display Sink (kmssink)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#video-sinks">Video sinks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#image-sinks">Image sinks</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#flows">Flows</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#command-line-arguments">Command line arguments</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance_visualizer.html">Performance Visualization Tool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Demo Configuration file</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="demo-configuration-file">
+<span id="pub-edgeai-configuration"></span><h1>Demo Configuration file<a class="headerlink" href="#demo-configuration-file" title="Permalink to this headline">¶</a></h1>
+<p>The demo config file uses YAML format to define input sources, models, outputs
+and finally the flows which defines how everything is connected. Config files
+for out-of-box demos are kept in <code class="docutils literal notranslate"><span class="pre">edge_ai_apps/configs</span></code> folder. The
+folder contains config files for all the use cases and also multi-input and
+multi-inference case. The folder also has a template YAML file
+<code class="docutils literal notranslate"><span class="pre">app_config_template.yaml</span></code> which has detailed explanation of all the
+parameters supported in the config file.</p>
+<p>Config file is divided in 4 sections:</p>
+<ol class="arabic simple">
+<li><p>Inputs</p></li>
+<li><p>Models</p></li>
+<li><p>Outputs</p></li>
+<li><p>Flows</p></li>
+</ol>
+<div class="section" id="inputs">
+<h2>Inputs<a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<p>The input section defines a list of supported inputs like camera, filesrc etc.
+Their properties like shown below.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">inputs</span><span class="p">:</span>
+    <span class="nt">input0</span><span class="p">:</span>                                         <span class="c1">#Camera Input</span>
+        <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">/dev/video2</span>                         <span class="c1">#Device file entry of the camera</span>
+        <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">jpeg</span>                                <span class="c1">#Input data format suported by camera</span>
+        <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1280</span>                                 <span class="c1">#Width and Height of the input</span>
+        <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">720</span>
+        <span class="nt">framerate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>                               <span class="c1">#Framerate of the source</span>
+
+    <span class="nt">input1</span><span class="p">:</span>                                         <span class="c1">#Video Input</span>
+        <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/videos/video_0000_h264.mp4</span>  <span class="c1">#Video file</span>
+        <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">h264</span>                                <span class="c1">#File encoding format</span>
+        <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1280</span>
+        <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">720</span>
+        <span class="nt">framerate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
+
+    <span class="nt">input2</span><span class="p">:</span>                                         <span class="c1">#Image Input</span>
+        <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/images/%04d.jpg</span>             <span class="c1">#Sequence of Image files, printf style formatting is used</span>
+        <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1280</span>
+        <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">720</span>
+        <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>                                    <span class="c1">#Starting Index (optional)</span>
+        <span class="nt">framerate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+<p>All supported inputs are listed in template config file.
+Below are the details of most commonly used inputs.</p>
+<div class="section" id="camera-sources-v4l2">
+<span id="pub-edgeai-camera-sources"></span><h3>Camera sources (v4l2)<a class="headerlink" href="#camera-sources-v4l2" title="Permalink to this headline">¶</a></h3>
+<p><strong>v4l2src</strong> GStreamer element is used to capture frames from camera sources
+which are exposed as v4l2 devices. In Linux, there are many devices which are
+implemented as v4l2 devices. Not all of them will be camera devices. You need
+to make sure the correct device is configured for running the demo successfully.</p>
+<p><code class="docutils literal notranslate"><span class="pre">init_script.sh</span></code> is ran as part of systemd, which detects all cameras connected
+and prints the detail like below in the UART console:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps# ./init_script.sh
+USB Camera detected
+    <span class="nv">device</span> <span class="o">=</span> /dev/video18
+    <span class="nv">format</span> <span class="o">=</span> jpeg
+CSI Camera <span class="m">0</span> detected
+    <span class="nv">device</span> <span class="o">=</span> /dev/video2
+    <span class="nv">name</span> <span class="o">=</span> imx219 <span class="m">8</span>-0010
+    <span class="nv">format</span> <span class="o">=</span> <span class="o">[</span>fmt:SRGGB8_1X8/1920x1080<span class="o">]</span>
+    <span class="nv">subdev_id</span> <span class="o">=</span> <span class="m">2</span>
+    <span class="nv">isp_required</span> <span class="o">=</span> yes
+IMX390 Camera <span class="m">0</span> detected
+    <span class="nv">device</span> <span class="o">=</span> /dev/video18
+    <span class="nv">name</span> <span class="o">=</span> imx390 <span class="m">10</span>-001a
+    <span class="nv">format</span> <span class="o">=</span> <span class="o">[</span>fmt:SRGGB12_1X12/1936x1100 field: none<span class="o">]</span>
+    <span class="nv">subdev_id</span> <span class="o">=</span> /dev/v4l-subdev7
+    <span class="nv">isp_required</span> <span class="o">=</span> yes
+    <span class="nv">ldc_required</span> <span class="o">=</span> yes
+</pre></div>
+</div>
+<p>script can also be run manually later to get the camera details.</p>
+<p>From the above log we can determine that 1 USB camera is connected
+(/dev/video18), and 1 CSI camera is connected (/dev/video2) which is imx219 raw
+sensor and needs ISP. IMX390 camera needs both ISP and LDC.</p>
+<p>Using this method, you can configure correct device for camera capture in the
+input section of config file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>input0:
+    source: /dev/video18  <span class="c1">#USB Camera</span>
+    format: jpeg          <span class="c1">#if connected USB camera supports jpeg</span>
+    width: <span class="m">1280</span>
+    height: <span class="m">720</span>
+    framerate: <span class="m">30</span>
+
+input1:
+    source: /dev/video2  <span class="c1">#CSI Camera</span>
+    format: auto         <span class="c1">#let the gstreamer negotiate the format</span>
+    width: <span class="m">1280</span>
+    height: <span class="m">720</span>
+    framerate: <span class="m">30</span>
+
+input2:
+    source: /dev/video2  <span class="c1">#IMX219 raw sensor that nees ISP</span>
+    format: rggb         <span class="c1">#ISP will be added in the pipeline</span>
+    width: <span class="m">1920</span>
+    height: <span class="m">1080</span>
+    framerate: <span class="m">30</span>
+    subdev-id: <span class="m">2</span>         <span class="c1">#needed by ISP to control sensor params via ioctls</span>
+
+input3:
+    source: /dev/video2  <span class="c1">#IMX390 raw sensor that nees ISP</span>
+    width: <span class="m">1936</span>
+    height: <span class="m">1100</span>
+    format: rggb12       <span class="c1">#ISP will be added in the pipeline</span>
+    subdev-id: <span class="m">2</span>         <span class="c1">#needed by ISP to control sensor params via ioctls</span>
+    framerate: <span class="m">30</span>
+    sen-id: imx390
+    ldc: True            <span class="c1">#LDC will be added in the pipeline</span>
+</pre></div>
+</div>
+<p>Make sure to configure correct <code class="docutils literal notranslate"><span class="pre">format</span></code> for camera input. <code class="docutils literal notranslate"><span class="pre">jpeg</span></code> for USB
+camera that supports MJPEG (Ex. C270 logitech USB camera). <code class="docutils literal notranslate"><span class="pre">auto</span></code> for CSI
+camera to allow gstreamer to negotiate the format. <code class="docutils literal notranslate"><span class="pre">rggb</span></code> for sensor
+that needs ISP.</p>
+</div>
+<div class="section" id="video-sources">
+<h3>Video sources<a class="headerlink" href="#video-sources" title="Permalink to this headline">¶</a></h3>
+<p>H.264 and H.265 encoded videos can be provided as input sources to the demos.
+Sample video files are provided under <code class="docutils literal notranslate"><span class="pre">/opt/edge_ai_apps/data/videos/video_0000_h264.mp4</span></code>
+and <code class="docutils literal notranslate"><span class="pre">/opt/edge_ai_apps/data/videos/video_000_h265.mp4</span></code></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">input1</span><span class="p">:</span>
+    <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/videos/video_0000_h264.mp4</span>
+    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">h264</span>
+    <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1280</span>
+    <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">720</span>
+    <span class="nt">framerate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
+
+<span class="nt">input2</span><span class="p">:</span>
+    <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/videos/video_0000_h265.mp4</span>
+    <span class="nt">format</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">h265</span>
+    <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1280</span>
+    <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">720</span>
+    <span class="nt">framerate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">25</span>
+</pre></div>
+</div>
+<p>Make sure to configure correct <code class="docutils literal notranslate"><span class="pre">format</span></code> for video input as shown above.
+By default the format is set to <code class="docutils literal notranslate"><span class="pre">auto</span></code> which will then use the GStreamer
+bin <code class="docutils literal notranslate"><span class="pre">decodebin</span></code> instead.</p>
+</div>
+<div class="section" id="image-sources">
+<h3>Image sources<a class="headerlink" href="#image-sources" title="Permalink to this headline">¶</a></h3>
+<p>JPEG compressed images can be provided as inputs to the demos. A sample set of
+images are provided under <code class="docutils literal notranslate"><span class="pre">/opt/edge_ai_apps/data/images</span></code>. The names of the
+files are numbered sequentially and incrementally and the demo plays the files
+at the fps specified by the user.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">input2</span><span class="p">:</span>
+    <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/images/%04d.jpg</span>
+    <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1280</span>
+    <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">720</span>
+    <span class="nt">index</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+    <span class="nt">framerate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rtsp-sources">
+<h3>RTSP sources<a class="headerlink" href="#rtsp-sources" title="Permalink to this headline">¶</a></h3>
+<p>H.264 encoded video streams either coming from a RTSP compliant IP camera or
+via RTSP server running on a remote PC can be provided as inputs to the demo.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">input0</span><span class="p">:</span>
+    <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">rtsp://172.24.145.220:8554/test</span> <span class="c1"># rtsp stream url, replace this with correct url</span>
+    <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1280</span>
+    <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">720</span>
+    <span class="nt">framerate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">30</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Usually video streams from any IP camera will be encrypted and cannot be
+played back directly without a decryption key. We tested RTSP source by
+setting up an RTSP server on a Ubuntu 18.04 PC by refering to this writeup,
+<a class="reference external" href="https://gist.github.com/Santiago-vdk/80c378a315722a1b813ae5da1661f890">Setting up RTSP server on PC</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="models">
+<h2>Models<a class="headerlink" href="#models" title="Permalink to this headline">¶</a></h2>
+<p>The model section defines a list of models that are used in the demo. Path to
+the model directory is a required argument for each model and rest are optional
+properties specific to given use cases like shown below.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">models</span><span class="p">:</span>
+    <span class="nt">model0</span><span class="p">:</span>
+        <span class="nt">model_path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../models/segmentation/ONR-SS-871-deeplabv3lite-mobv2-cocoseg21-512x512</span>   <span class="c1">#Model Directory</span>
+        <span class="nt">alpha</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.4</span>                                                                            <span class="c1">#alpha for blending segmentation mask (optional)</span>
+    <span class="nt">model1</span><span class="p">:</span>
+        <span class="nt">model_path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../models/detection/TFL-OD-202-ssdLite-mobDet-DSP-coco-320x320</span>
+        <span class="nt">viz_threshold</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.3</span>                                                                    <span class="c1">#Visualization threshold for adding bounding boxes (optional)</span>
+    <span class="nt">model2</span><span class="p">:</span>
+        <span class="nt">model_path</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../models/classification/TVM-CL-338-mobileNetV2-qat</span>
+        <span class="nt">topN</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5</span>                                                                               <span class="c1">#Number of top N classes (optional)</span>
+</pre></div>
+</div>
+<p>Below are some of the use case specific properties:</p>
+<ol class="arabic simple">
+<li><p><strong>alpha</strong>: This determines the weight of the mask for blending the semantic
+segmentation output with the input image <code class="docutils literal notranslate"><span class="pre">alpha</span> <span class="pre">*</span> <span class="pre">mask</span> <span class="pre">+</span> <span class="pre">(1</span> <span class="pre">-</span> <span class="pre">alpha)</span> <span class="pre">*</span> <span class="pre">image</span></code></p></li>
+<li><p><strong>viz_threshold</strong>: Score threshold to draw the bounding boxes for detected
+objects in object detection. This can be used to control the number of boxes
+in the output, increase if there are too many and decrease if there are very
+few</p></li>
+<li><p><strong>topN</strong>: Number of most probable classes to overlay on image classification
+output</p></li>
+</ol>
+<p>The content of the model directory and its structure is discussed in detail in
+<a class="reference internal" href="inference_models.html#pub-edgeai-import-custom-models"><span class="std std-ref">Import Custom Models</span></a></p>
+</div>
+<div class="section" id="outputs">
+<h2>Outputs<a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<p>The output section defines a list of supported outputs.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">outputs</span><span class="p">:</span>
+    <span class="nt">output0</span><span class="p">:</span>                                                     <span class="c1">#Display Output</span>
+        <span class="nt">sink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">kmssink</span>
+        <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1920</span>                                              <span class="c1">#Width and Height of the output</span>
+        <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1080</span>
+        <span class="nt">connector</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">39</span>                                            <span class="c1">#Connector ID for kmssink (optional)</span>
+
+    <span class="nt">output1</span><span class="p">:</span>                                                     <span class="c1">#Video Output</span>
+        <span class="nt">sink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/output/videos/output_video.mkv</span>             <span class="c1">#Output video file</span>
+        <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1920</span>
+        <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1080</span>
+
+    <span class="nt">output2</span><span class="p">:</span>                                                     <span class="c1">#Image Output</span>
+        <span class="nt">sink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/output/images/output_image_%04d.jpg</span>        <span class="c1">#Image file name, printf style formatting is used</span>
+        <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1920</span>
+        <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1080</span>
+</pre></div>
+</div>
+<p>All supported outputs are listed in template config file.
+Below are the details of most commonly used outputs</p>
+<div class="section" id="display-sink-kmssink">
+<h3>Display Sink (kmssink)<a class="headerlink" href="#display-sink-kmssink" title="Permalink to this headline">¶</a></h3>
+<p>When you have only one display connected to the SK, kmssink will try to use
+it for displaying the output buffers. In case you have connected multiple
+display monitors (e.g. Display Port and HDMI), you can select a specific display
+for kmssink by passing a specific connector ID number.
+Following command finds out the connected displays available to use.</p>
+<p><strong>Note</strong>: Run this command outside docker container. The first number in each
+line is the connector-id which we will use in next step.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps# modetest -M tidss -c <span class="p">|</span> grep connected
+<span class="m">39</span>      <span class="m">38</span>      connected       DP-1            530x300         <span class="m">12</span>      <span class="m">38</span>
+<span class="m">48</span>      <span class="m">0</span>       disconnected    HDMI-A-1        0x0             <span class="m">0</span>       <span class="m">47</span>
+</pre></div>
+</div>
+<p>From above output, we can see that connector ID 39 is connected. Configure the
+connector ID in the output section of the config file.</p>
+</div>
+<div class="section" id="video-sinks">
+<h3>Video sinks<a class="headerlink" href="#video-sinks" title="Permalink to this headline">¶</a></h3>
+<p>The post-processed outputs can be encoded in H.264 format and stored on disk.
+Please specify the location of the video file in the configuration file.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">output1</span><span class="p">:</span>
+    <span class="nt">sink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/output/videos/output_video.mkv</span>
+    <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1920</span>
+    <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1080</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="image-sinks">
+<h3>Image sinks<a class="headerlink" href="#image-sinks" title="Permalink to this headline">¶</a></h3>
+<p>The post-processed outputs can be stored as JPEG compressed images.
+Please specify the location of the image files in the configuration file.
+The images will be named sequentially and incrementally as shown.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">output2</span><span class="p">:</span>
+    <span class="nt">sink</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">../data/output/images/output_image_%04d.jpg</span>
+    <span class="nt">width</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1920</span>
+    <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1080</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="flows">
+<h2>Flows<a class="headerlink" href="#flows" title="Permalink to this headline">¶</a></h2>
+<p>The flows section defines how inputs, models and outputs are connected.
+Multiple flows can be defined to achieve multi input, multi inference like
+below.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">flows</span><span class="p">:</span>
+    <span class="nt">flow0</span><span class="p">:</span>                              <span class="c1">#First Flow</span>
+        <span class="nt">input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input0</span>                   <span class="c1">#Input for the Flow</span>
+        <span class="nt">models</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">model1</span><span class="p p-Indicator">,</span> <span class="nv">model2</span><span class="p p-Indicator">]</span>        <span class="c1">#List of models to be used</span>
+        <span class="nt">outputs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">output0</span><span class="p p-Indicator">,</span> <span class="nv">output0</span><span class="p p-Indicator">]</span>     <span class="c1">#Outputs to be used for each model inference output</span>
+        <span class="nt">mosaic</span><span class="p">:</span>                         <span class="c1">#Positions to place the inference outputs in the output frame</span>
+            <span class="nt">mosaic0</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">160</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">90</span>
+            <span class="nt">mosaic1</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">960</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">90</span>
+    <span class="nt">flow1</span><span class="p">:</span>                              <span class="c1">#Second Flow</span>
+        <span class="nt">input</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">input1</span>
+        <span class="nt">models</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">model0</span><span class="p p-Indicator">,</span> <span class="nv">model3</span><span class="p p-Indicator">]</span>
+        <span class="nt">outputs</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">output0</span><span class="p p-Indicator">,</span> <span class="nv">output0</span><span class="p p-Indicator">]</span>
+        <span class="nt">mosaic</span><span class="p">:</span>
+            <span class="nt">mosaic0</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">160</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">540</span>
+            <span class="nt">mosaic1</span><span class="p">:</span>
+                <span class="nt">width</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">800</span>
+                <span class="nt">height</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">450</span>
+                <span class="nt">pos_x</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">960</span>
+                <span class="nt">pos_y</span><span class="p">:</span>  <span class="l l-Scalar l-Scalar-Plain">540</span>
+</pre></div>
+</div>
+<p>Each flow should have exactly <strong>1 input</strong>, <strong>n models</strong> to infer the given input
+and <strong>n outputs</strong> to render the output of each inference. Along with input, models
+and outputs it is required to define <strong>n mosaics</strong> which are the position of the
+inference output in the final output plane. This is needed because multiple
+inference outputs can be rendered to same output (Ex: Display).</p>
+<div class="section" id="command-line-arguments">
+<h3>Command line arguments<a class="headerlink" href="#command-line-arguments" title="Permalink to this headline">¶</a></h3>
+<p>Limited set of command line arguments can be provided, run with ‘-h’ or ‘–help’
+option to list the supported parameters.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>usage: Run : ./app_edgeai.py -h <span class="k">for</span> <span class="nb">help</span>
+
+positional arguments:
+  config           Path to demo config file
+                       ex: ./app_edgeai.py ../configs/app_config.yaml
+
+optional arguments:
+  -h, --help       show this <span class="nb">help</span> message and <span class="nb">exit</span>
+  -n, --no-curses  Disable curses report
+                   default: Disabled
+  -v, --verbose    Verbose option to print profile info on stdout
+                   default: Disabled
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="running_advance_demos.html" class="btn btn-neutral float-right" title="Running Advance demos" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="inference_models.html" class="btn btn-neutral" title="DL models for Edge Inference" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>

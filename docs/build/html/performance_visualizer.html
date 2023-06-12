@@ -1,0 +1,351 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Performance Visualization Tool &mdash; Processor SDK Linux for Edge AI Documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+  
+    <link rel="stylesheet" href="_static/theme_overrides.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Processor SDK Linux for Edge AI Documentation" href="index.html"/>
+        <link rel="next" title="Connectivity and Peripherals" href="connectivity.html"/>
+        <link rel="prev" title="Data Flows" href="data_flows.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+  <header id="tiHeader">
+    <div class="top">
+      <ul>
+        <li id="top_logo">
+          <a href="http://www.ti.com">
+            <img src="_static/img/ti_logo.png"/>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="nav"></div>
+  </header>
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Processor SDK Linux for Edge AI
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                08.02.01
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="sdk_overview.html">Processor SDK Linux for Edge AI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_simple_demos.html">Running Simple demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="inference_models.html">DL models for Edge Inference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration_file.html">Demo Configuration file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="running_advance_demos.html">Running Advance demos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docker_environment.html">Docker Environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_flows.html">Data Flows</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Performance Visualization Tool</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generating-performance-logs">Generating Performance Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-the-visualization-tool">Running the Visualization tool</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#available-options">Available options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="connectivity.html">Connectivity and Peripherals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sdk_components.html">SDK Components</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">SDK Roadmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="release_notes.html">Release Notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="datasheet.html">Datasheet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test_report.html">Test Report</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development_flow.html">SDK Development flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQs</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Processor SDK Linux for Edge AI</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Performance Visualization Tool</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="performance-visualization-tool">
+<span id="pub-edgeai-perf-viz-tool"></span><h1>Performance Visualization Tool<a class="headerlink" href="#performance-visualization-tool" title="Permalink to this headline">¶</a></h1>
+<p>The performance visualization tool can be used to view all the performance
+statistics recorded when running the edge AI C++ demo application. This includes
+the CPU and HWA loading, DDR bandwidth, Junction Temperatures and FPS obtained.
+Refer to <a class="reference internal" href="#pub-edgeai-available-statistics"><span class="std std-ref">Available options</span></a> for details on the performance
+metrics available to be plotted.</p>
+<p>This tool works as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Logging: When running the application, the performance statistics can be
+recorded and stored in log files. This is done automatically when running
+the C++ application, but the Python application does not generate logs.
+However a standalone binary executable is provided that can be run in parallel
+with the Python application, which will generate these performance logs.</p></li>
+<li><p>Visualization: There is a Python script which parses these logs and plots graphs,
+which can be easily viewed by a visiting a URL in any browser. This script uses
+Streamlit package to update the graphs in real-time, as the Edge AI application
+runs in parallel. However, since Streamlit is not supported in the SDK out of box,
+this script needs to run on docker. Please refer to <a class="reference internal" href="docker_environment.html#pub-edgeai-docker-env"><span class="std std-ref">Docker Environment</span></a>
+for building and running a docker container.</p></li>
+</ul>
+</div></blockquote>
+<div class="section" id="generating-performance-logs">
+<h2>Generating Performance Logs<a class="headerlink" href="#generating-performance-logs" title="Permalink to this headline">¶</a></h2>
+<p>Each log file contains real-time values for some performance metrics, averaged
+over a 2s window. The temperature sensor values are sampled in real time, every 2s.
+The performance visualization tool then parses these log files one by one based on
+the modification timestamps.</p>
+<p>The edge AI C++ demo will automatically generate log files and store them in the directory
+<code class="docutils literal notranslate"><span class="pre">../perf_logs</span></code>, that is, one level up from where the C++ app is run. For
+example, if the app is run from <code class="docutils literal notranslate"><span class="pre">edge_ai_apps/apps_cpp</span></code>, the logs will be
+stored in <code class="docutils literal notranslate"><span class="pre">edge_ai_apps/perf_logs</span></code>.</p>
+<p>Similarly, there is a binary executable that can be compiled that does the same logging
+standalone. The source for this is available under <code class="docutils literal notranslate"><span class="pre">edge_ai_apps/scripts/perf_stats/</span></code>.
+The README.md file has simple instructions to build and run this standalone logger binary.
+After building it, use following command to print the statistics on the terminal as well
+as save them in log files that can be parsed.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@j7-evm:/opt/edge_ai_apps/scripts/perf_stats/build# ../bin/Release/ti_perfstats -l
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-the-visualization-tool">
+<h2>Running the Visualization tool<a class="headerlink" href="#running-the-visualization-tool" title="Permalink to this headline">¶</a></h2>
+<p>To use this tool, simply start a docker session and then run the command given
+below. This script expects some log files to be present in the directory
+<code class="docutils literal notranslate"><span class="pre">edge_ai_apps/perf_logs</span></code> after running any C++ demo. One can also bring up this
+tool while running the demo but it might affect the performance of the demo itself
+as it consumes a bit of ARM cycles during launch but stabilizes over a certain
+duration.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>docker<span class="o">]</span> root@j7-evm:/opt/edge_ai_apps# streamlit run scripts/perf_vis.py --theme.base<span class="o">=</span><span class="s2">&quot;light&quot;</span>
+</pre></div>
+</div>
+<p>This script also accepts the log directory as a command line argument as follows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>docker<span class="o">]</span> root@j7-evm:/opt/edge_ai_apps# streamlit run scripts/perf_vis.py --theme.base<span class="o">=</span><span class="s2">&quot;light&quot;</span> -- -D &lt;path/to/logs/directory/&gt;
+</pre></div>
+</div>
+<p>A network URL can be seen in the terminal output. The graphs can be viewed by
+visiting this URL in any browser. The plotted graphs will keep updating based
+on the available log files.</p>
+<div class="figure align-center" id="id1">
+<a class="reference internal image-reference" href="_images/perf_plots.png"><img alt="_images/perf_plots.png" src="_images/perf_plots.png" style="width: 1380.75px; height: 636.0px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 23 </span><span class="caption-text">Performance visualizer dashboard showing CPU and HWA loading, DDR bandwidth,
+Junction Temperatures and the FPS obtained</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>To exit press Ctrl+C in the terminal.</p>
+<div class="section" id="available-options">
+<span id="pub-edgeai-available-statistics"></span><h3>Available options<a class="headerlink" href="#available-options" title="Permalink to this headline">¶</a></h3>
+<p>Average frames per second (FPS) recorded by the application is displayed by
+default. Using the checkboxes in the sidebar, one can select which performance
+metrics to view. There are 14 metrics available to be plotted, as seen from
+the above image:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>CPU Load: Total loading for the A72(mpu1_0), R5F(mcu2_0/1), C66x(c6x_1/2) and C71x(c7x_1) DSPs.</p></li>
+<li><p>HWA Load: Loading (percentage) for the various available hardware accelerators.</p></li>
+<li><p>DDR Bandwidth: Average read, write and total bandwidth recorded in the previous 2s interval.</p></li>
+<li><p>Junction Temperatures: The live temperatures recorded at various junctions</p></li>
+<li><p>Task Table: A separate graph for each cpu showing the loading due to various tasks running on it.</p></li>
+<li><p>Heap Table: A separate graph for each cpu showing the heap memory usage statistics.</p></li>
+</ul>
+</div></blockquote>
+<p>For the first three metrics, there is a choice to view line graphs with a 30s
+history or bar graphs with only the real-time values. The remaining eleven have
+real-time bar graphs as the only option.</p>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="connectivity.html" class="btn btn-neutral float-right" title="Connectivity and Peripherals" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="data_flows.html" class="btn btn-neutral" title="Data Flows" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+      <a href="http://www.ti.com/corp/docs/legal/copyright.shtml">&copy; Copyright 2021-2022</a>, Texas Instruments Incorporated. All rights reserved. <br>
+      <a href="http://www.ti.com/corp/docs/legal/trademark/trademrk.htm">Trademarks</a> | <a href="http://www.ti.com/corp/docs/legal/privacy.shtml">Privacy policy</a> | <a href="http://www.ti.com/corp/docs/legal/termsofuse.shtml">Terms of use</a> | <a href="http://www.ti.com/lsds/ti/legal/termsofsale.page">Terms of sale</a>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+    <script src="http://www.ti.com/assets/js/headerfooter/analytics.js" type="text/javascript" charset="utf-8"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+        });
+
+      var menuHeight = window.innerHeight;
+
+      var contentOffset = $(".wy-nav-content-wrap").offset();
+      var contentHeight = $(".wy-nav-content-wrap").height();
+      var contentBottom = contentOffset.top + contentHeight;
+
+      function setNavbarTop() {
+          var scrollTop = $(window).scrollTop();
+          var maxTop = scrollTop + menuHeight;
+
+          // If past the header
+          if (scrollTop > contentOffset.top && maxTop < contentBottom) {
+            stickyTop = scrollTop - contentOffset.top;
+          } else if (maxTop > contentBottom) {
+            stickyTop = scrollTop - contentOffset.top - (maxTop - contentBottom);
+          } else {
+            stickyTop = 0;
+          }
+
+          $(".wy-nav-side").css("top", stickyTop);
+      }
+
+      $(document).ready(function() {
+        setNavbarTop();
+        $(window).scroll(function () {
+          setNavbarTop();
+        });
+      });
+  </script>
+   
+
+</body>
+</html>
